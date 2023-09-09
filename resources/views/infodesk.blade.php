@@ -46,7 +46,7 @@
                         <div class="icon-box">
                             <div class="icon"><i class="bi bi-card-list"></i></div>
                             <h4 class="title">
-                                <a href="Konsultasi-Kunjungan.html" class="stretched-link">Konsultasi / Kunjungan</a>
+                                <a href="/konsultasi-kunjungan" class="stretched-link">Konsultasi / Kunjungan</a>
                             </h4>
                         </div>
                     </div><!--End Icon Box -->
@@ -629,4 +629,7 @@
             </div>
         </section>
     </main><!-- End #main -->
+
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
 @endsection

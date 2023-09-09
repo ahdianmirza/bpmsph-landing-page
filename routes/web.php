@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\InfodeskController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FormController;
+use App\Http\Controllers\InfodeskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [InfodeskController::class, 'index']);
+Route::get('/konsultasi-kunjungan', [FormController::class, 'index']);

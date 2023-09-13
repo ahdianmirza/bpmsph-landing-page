@@ -20,7 +20,8 @@
                         <div class="card-body">
                             <h5 class="card-title">Identitas Pengunjung dan Keterangan Kunjungan</h5>
                             <!-- Horizontal Form -->
-                            <form>
+                            <form action="" method="post">
+                                @csrf
                                 <div class="row mb-3">
                                     <div class="d-flex flex-column">
                                         <label for="name" class="col-form-label">Nama</label>

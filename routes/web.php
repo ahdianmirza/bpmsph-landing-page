@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\InfodeskController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,7 @@ use App\Http\Controllers\InfodeskController;
 */
 
 Route::get('/', [InfodeskController::class, 'index']);
-Route::get('/konsultasi-kunjungan', [FormController::class, 'index']);
+Route::get('/konsultasi-kunjungan', [FormController::class, 'konsulKunjungan']);
+Route::get('/sample-uji', [FormController::class, 'sampleUji']);
+Route::post('/sample-uji', [FormController::class, 'sampleUjiStore']);
+Route::get('/dashboard/tables-sample-uji', [DashboardController::class, 'tablesIndex']);

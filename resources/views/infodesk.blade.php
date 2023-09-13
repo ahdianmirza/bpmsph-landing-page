@@ -37,7 +37,7 @@
                     <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
                         <div class="icon-box">
                             <div class="icon"><i class="bi bi-card-checklist"></i></div>
-                            <h4 class="title"><a href="Pengantaran-Sample-Uji.html" class="stretched-link">Pengantaran
+                            <h4 class="title"><a href="/sample-uji" class="stretched-link">Pengantaran
                                     Sample Uji</a></h4>
                         </div>
                     </div><!--End Icon Box -->

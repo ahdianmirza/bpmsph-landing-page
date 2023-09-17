@@ -4,53 +4,38 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="index.html">
+            <a class="nav-link {{ Request::is('dashboard') ? '' : 'collapsed' }}" href="/dashboard">
                 <i class="bi bi-grid"></i>
                 <span>Dashboard</span>
             </a>
         </li><!-- End Dashboard Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
+            <a class="nav-link {{ Request::is('dashboard/data-suhu-pengunjung') ? '' : 'collapsed' }}"
+                href="/dashboard/data-suhu-pengunjung">
+                <i class="bi bi-thermometer-half"></i>
+                <span>Data Suhu Pengunjung</span>
             </a>
-            <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                <li>
-                    <a href="forms-elements.html">
-                        <i class="bi bi-circle"></i><span>Form Elements</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="forms-layouts.html">
-                        <i class="bi bi-circle"></i><span>Form Layouts</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="forms-editors.html">
-                        <i class="bi bi-circle"></i><span>Form Editors</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="forms-validation.html">
-                        <i class="bi bi-circle"></i><span>Form Validation</span>
-                    </a>
-                </li>
-            </ul>
-        </li><!-- End Forms Nav -->
+        </li><!-- End Data Suhu Pengunjung Nav -->
+
 
         <li class="nav-item">
-            <a class="nav-link " data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+            <a class="nav-link {{ Request::is('dashboard/tables*') ? '' : 'collapsed' }}" data-bs-target="#tables-nav"
+                data-bs-toggle="collapse" href="#">
                 <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i
                     class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="tables-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+            <ul id="tables-nav" class="nav-content collapse {{ Request::is('dashboard/tables*') ? 'show' : '' }}"
+                data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="tables-general.html">
+                    <a href="/dashboard/tables-konsultasi-kunjungan"
+                        class="{{ Request::is('dashboard/tables-konsultasi-kunjungan') ? 'active' : '' }}">
                         <i class="bi bi-circle"></i><span>Data Konsultasi</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/dashboard/tables" class="active">
+                    <a href="/dashboard/tables-sample-uji"
+                        class="{{ Request::is('dashboard/tables-sample-uji') ? 'active' : '' }}">
                         <i class="bi bi-circle"></i><span>Data Pengantaran Sample</span>
                     </a>
                 </li>
@@ -80,33 +65,10 @@
             </ul>
         </li><!-- End Charts Nav -->
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-gem"></i><span>Icons</span><i class="bi bi-chevron-down ms-auto"></i>
-            </a>
-            <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                <li>
-                    <a href="icons-bootstrap.html">
-                        <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="icons-remix.html">
-                        <i class="bi bi-circle"></i><span>Remix Icons</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="icons-boxicons.html">
-                        <i class="bi bi-circle"></i><span>Boxicons</span>
-                    </a>
-                </li>
-            </ul>
-        </li><!-- End Icons Nav -->
-
         <li class="nav-heading">Pages</li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="users-profile.html">
+            <a class="nav-link {{ Request::is('dashboard/profile') ? '' : 'collapsed' }}" href="/dashboard/profile">
                 <i class="bi bi-person"></i>
                 <span>Profile</span>
             </a>

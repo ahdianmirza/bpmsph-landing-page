@@ -10,7 +10,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{ asset('assets/img/niceadmin/favicon.png') }}" rel="icon">
+    <link href="{{ asset('assets/img/logo.png') }}" rel="icon">
     <link href="{{ asset('assets/img/niceadmin/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -32,7 +32,7 @@
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 </head>
 
-<body>
+<body class="">
 
     @include('partials.dashboard.header')
 

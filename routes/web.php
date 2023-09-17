@@ -16,6 +16,8 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
+Route::get('/login', [LoginController::class, 'index']);
+
 Route::get('/', [InfodeskController::class, 'index']);
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard']);

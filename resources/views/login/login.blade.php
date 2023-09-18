@@ -14,7 +14,14 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-center pt-4 pb-2">
-                                        <div class="logo d-flex align-items-center w-auto">
+                                        <div
+                                            class="logo d-flex flex-column justify-content-center align-items-center w-auto">
+                                            @if (session()->has('success'))
+                                                <div class="alert alert-success" role="alert">
+                                                    {{ session('success') }}
+                                                </div>
+                                            @endif
+
                                             <img src="{{ asset('assets/img/logo.png') }}" alt="Logo BPMSPH">
                                         </div>
                                     </div><!-- End Logo -->

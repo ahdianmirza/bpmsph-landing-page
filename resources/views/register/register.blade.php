@@ -20,39 +20,36 @@
                                     </div><!-- End Logo -->
 
                                     <div class="pb-2">
-                                        <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
+                                        <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
                                     </div>
 
                                     <form class="row g-3 needs-validation" novalidate>
                                         <div class="col-12">
+                                            <label for="name" class="form-label">Full Name</label>
+                                            <input type="text" name="name" class="form-control" id="name"
+                                                required autofocus autocomplete="off" placeholder="Enter your full name!">
+                                            <div class="invalid-feedback">Please, enter your full name!</div>
+                                        </div>
+
+                                        <div class="col-12">
                                             <label for="email" class="form-label">Email Address</label>
-                                            <div class="input-group has-validation">
-                                                <span class="input-group-text" id="inputGroupPrepend"><i
-                                                        class="bi bi-envelope"></i></span>
-                                                <input type="email" name="email" class="form-control" id="email"
-                                                    required autocomplete="off" autofocus
-                                                    placeholder="Enter your email address!">
-                                                <div class="invalid-feedback">Please enter your email address.</div>
-                                            </div>
+                                            <input type="email" name="email" class="form-control" id="email"
+                                                required autocomplete="off" placeholder="Enter your email address!">
+                                            <div class="invalid-feedback">Please, enter your email address!</div>
                                         </div>
 
                                         <div class="col-12">
                                             <label for="password" class="form-label">Password</label>
-                                            <div class="input-group has-validation">
-                                                <span class="input-group-text" id="inputGroupPrepend"><i
-                                                        class="bi bi-lock"></i></span>
-                                                <input type="password" name="password" class="form-control" id="password"
-                                                    required placeholder="Enter your password!">
-                                                <div class="invalid-feedback">Please enter your password.</div>
-                                            </div>
+                                            <input type="password" name="password" class="form-control" id="password"
+                                                required autocomplete="off" placeholder="Enter your password!">
+                                            <div class="invalid-feedback">Please, enter your email address!</div>
                                         </div>
 
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100" type="submit">Login</button>
+                                            <button class="btn btn-primary w-100" type="submit">Create Account</button>
                                         </div>
                                         <div class="col-12 text-center">
-                                            <p class="small mb-0">Don't have account? <a href="/register">Create
-                                                    an account</a></p>
+                                            <p class="small mb-0">Already have an account? <a href="/login">Login</a></p>
                                         </div>
                                     </form>
 

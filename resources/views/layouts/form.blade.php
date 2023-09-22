@@ -44,7 +44,7 @@
 
         function tampilSuhu() {
             $.ajax({
-                url: "{{ route('bacasuhu') }}",
+                url: "{{ route('bacasuhu', 'suhu') }}",
                 type: "GET",
                 dataType: "json",
                 success: function(data) {

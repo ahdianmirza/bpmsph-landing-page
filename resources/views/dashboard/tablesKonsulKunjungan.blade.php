@@ -36,6 +36,7 @@
                                         <th scope="col">Waktu</th>
                                         <th scope="col">Nama Staff</th>
                                         <th scope="col">Tujuan</th>
+                                        <th scope="col">Suhu</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -50,6 +51,7 @@
                                             <td>{{ $konsul->waktu }}</td>
                                             <td>{{ $konsul->staff }}</td>
                                             <td>{{ $konsul->tujuan }}</td>
+                                            <td>{{ $konsul->suhu }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

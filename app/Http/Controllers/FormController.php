@@ -24,9 +24,10 @@ class FormController extends Controller
             'tanggal' => 'required',
             'waktu' => 'required',
             'staff' => 'required',
-            'tujuan' => 'required|max:255'
+            'tujuan' => 'required|max:255',
+            'suhu' => 'required'
         ]);
-
+        
         KonsulKunjungan::create($validatedData);
         return redirect('/konsultasi-kunjungan')->with('success', 'New data has been added');
     }

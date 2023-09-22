@@ -9,7 +9,7 @@ use App\Models\SensorSuhu;
 class SensorSuhuController extends Controller
 {
     public function bacasuhu() {
-        $data = SensorSuhu::all();
+        $data = SensorSuhu::latest()->get();
         return response()->json($data);
         
         // $data = request()->all();

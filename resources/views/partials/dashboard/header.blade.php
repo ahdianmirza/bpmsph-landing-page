@@ -129,10 +129,13 @@
                     </li>
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="/logout">
-                            <i class="bi bi-box-arrow-right"></i>
-                            <span>Logout</span>
-                        </a>
+                        <form action="/logout" method="post">
+                            @csrf
+                            <button type="submit" class="dropdown-item d-flex align-items-center">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Logout</span>
+                            </button>
+                        </form>
                     </li>
 
                 </ul><!-- End Profile Dropdown Items -->

@@ -18,24 +18,26 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('auth');
+
+Route::get('/dashboard/data-suhu-pengunjung', [DashboardController::class, 'dataSuhuPengunjung'])->middleware('auth');
+
+Route::get('/dashboard/tables-konsultasi-kunjungan', [DashboardController::class, 'tablesKonsulKunjungan'])->middleware('auth');
+Route::get('/dashboard/tables-sample-uji', [DashboardController::class, 'tablesUjiSample'])->middleware('auth');
+
+Route::get('/dashboard/profile', [DashboardController::class, 'profile'])->middleware('auth');
+
 Route::get('/', [InfodeskController::class, 'index']);
-
-Route::get('/dashboard', [DashboardController::class, 'dashboard']);
-
-Route::get('/dashboard/data-suhu-pengunjung', [DashboardController::class, 'dataSuhuPengunjung']);
 
 Route::get('/konsultasi-kunjungan', [FormController::class, 'konsulKunjungan']);
 Route::post('/konsultasi-kunjungan', [FormController::class, 'konsulKunjunganStore']);
 
 Route::get('/sample-uji', [FormController::class, 'sampleUji']);
 Route::post('/sample-uji', [FormController::class, 'sampleUjiStore']);
-
-Route::get('/dashboard/tables-konsultasi-kunjungan', [DashboardController::class, 'tablesKonsulKunjungan']);
-Route::get('/dashboard/tables-sample-uji', [DashboardController::class, 'tablesUjiSample']);
-
-Route::get('/dashboard/profile', [DashboardController::class, 'profile']);

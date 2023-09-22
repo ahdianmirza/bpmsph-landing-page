@@ -44,3 +44,4 @@ Route::get('/sample-uji', [FormController::class, 'sampleUji']);
 Route::post('/sample-uji', [FormController::class, 'sampleUjiStore']);
 
 Route::get('/bacasuhu', [SensorSuhuController::class, 'bacasuhu'])->name('bacasuhu');
+Route::get('/simpan/{suhu}', [SensorSuhuController::class, 'simpansuhu']);

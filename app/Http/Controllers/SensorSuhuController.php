@@ -12,9 +12,18 @@ class SensorSuhuController extends Controller
         $data = SensorSuhu::all();
         return response()->json($data);
         
+        // $data = request()->all();
+        // return response()->json($data);
+        
         // $sensor = SensorSuhu::all();
         // return view('sensor.bacasuhu', [
         //     'suhus' => $sensor
         // ]);
+    }
+
+    public function simpansuhu() {
+        SensorSuhu::where('id', '1')->update([
+            'suhu' => request()->suhu
+        ]);
     }
 }

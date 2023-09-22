@@ -6,6 +6,7 @@ use App\Http\Controllers\InfodeskController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SensorSuhuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +42,5 @@ Route::post('/konsultasi-kunjungan', [FormController::class, 'konsulKunjunganSto
 
 Route::get('/sample-uji', [FormController::class, 'sampleUji']);
 Route::post('/sample-uji', [FormController::class, 'sampleUjiStore']);
+
+Route::get('/bacasuhu', [SensorSuhuController::class, 'bacasuhu'])->name('bacasuhu');

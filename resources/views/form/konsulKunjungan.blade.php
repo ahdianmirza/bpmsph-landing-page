@@ -34,7 +34,7 @@
                                         <div class="col">
                                             <input type="text" class="form-control @error('name') is-invalid @enderror"
                                                 id="name" name="name" value="{{ old('name') }}" autocomplete="off"
-                                                autofocus required>
+                                                autofocus>
                                             @error('name')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -47,9 +47,9 @@
                                     <div class="d-flex flex-column">
                                         <label for="whatsapp" class="col col-form-label">Nomor WhatsApp</label>
                                         <div class="col">
-                                            <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                                id="whatsapp" name="whatsapp" value="{{ old('whatsapp') }}"
-                                                autocomplete="off" required>
+                                            <input type="text"
+                                                class="form-control @error('whatsapp') is-invalid @enderror" id="whatsapp"
+                                                name="whatsapp" value="{{ old('whatsapp') }}" autocomplete="off">
                                             @error('whatsapp')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -63,8 +63,8 @@
                                         <label for="asal" class="col col-form-label">Instansi / Mandiri</label>
                                         <div class="col">
                                             <input type="text" class="form-control @error('asal') is-invalid @enderror"
-                                                id="asal" name="asal" value="{{ old('asal') }}" autocomplete="off"
-                                                required>
+                                                id="asal" name="asal" value="{{ old('asal') }}"
+                                                autocomplete="off">
                                             @error('asal')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -78,8 +78,8 @@
                                         <label for="alamat" class="col col-form-label">Alamat</label>
                                         <div class="col">
                                             <input type="text" class="form-control @error('alamat') is-invalid @enderror"
-                                                id="alamat" name="alamat" value="{{ old('alamat') }}" autocomplete="off"
-                                                required>
+                                                id="alamat" name="alamat" value="{{ old('alamat') }}"
+                                                autocomplete="off">
                                             @error('alamat')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -94,7 +94,7 @@
                                         <div class="col">
                                             <input type="date"
                                                 class="form-control @error('tanggal') is-invalid @enderror" id="tanggal"
-                                                name="tanggal" value="{{ old('tanggal') }}" required>
+                                                name="tanggal" value="{{ old('tanggal') }}">
                                             @error('tanggal')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -108,7 +108,7 @@
                                         <label for="waktu" class="col col-form-label">Waktu</label>
                                         <div class="col">
                                             <input type="time" class="form-control @error('waktu') is-invalid @enderror"
-                                                id="waktu" name="waktu" value="{{ old('waktu') }}" required>
+                                                id="waktu" name="waktu" value="{{ old('waktu') }}">
                                             @error('waktu')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -135,12 +135,29 @@
                                         <div class="col">
                                             <input type="text"
                                                 class="form-control @error('tujuan') is-invalid @enderror" id="tujuan"
-                                                name="tujuan" value="{{ old('tujuan') }}" autocomplete="off" required>
+                                                name="tujuan" value="{{ old('tujuan') }}" autocomplete="off">
                                             @error('tujuan')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
                                             @enderror
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="d-flex flex-column">
+                                        <label for="suhu" class="col col-form-label">Suhu</label>
+                                        <div class="col">
+                                            <input type="text" class="form-control @error('suhu') is-invalid @enderror"
+                                                id="suhu" name="suhu" autocomplete="off">
+                                            @error('suhu')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div>
+                                            {{-- <span id="suhu">0</span> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -155,4 +172,6 @@
         </section>
 
     </main><!-- End #main -->
+
+    <script></script>
 @endsection

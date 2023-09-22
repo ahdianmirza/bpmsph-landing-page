@@ -28,8 +28,34 @@
     <link href="{{ asset('assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
 
+    {{-- jquery --}}
+    <script src="{{ asset('/assets/jquery/jquery.js') }}"></script>
+
     <!-- Template Main CSS File -->
     <link href="{{ asset('assets/css/psupage.css') }}" rel="stylesheet">
+
+    {{-- ajax realtime --}}
+    <script>
+        $(document).ready(() => {
+            setInterval(() => {
+                tampilSuhu();
+            }, 1000);
+        })
+
+        function tampilSuhu() {
+            $.ajax({
+                url: "{{ route('bacasuhu') }}",
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    $.each(data, function(key, values) {
+                        suhu = data[key].suhu;
+                        $('#suhu').val(suhu);
+                    })
+                }
+            })
+        }
+    </script>
 </head>
 
 <body>

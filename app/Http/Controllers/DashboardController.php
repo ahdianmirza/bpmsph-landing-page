@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\KonsulKunjungan;
 use App\Models\Sampleuji;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
@@ -39,5 +40,19 @@ class DashboardController extends Controller
         return view('dashboard.profile', [
             'title' => 'My Profile'
         ]);
+    }
+
+    public function updateProfile(Request $request, $user_id) {
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|email:dns',
+            'job' => 'required|max:255',
+            'phone' => 'required|max:255'
+        ]);
+
+        User::firstWhere('id', $user_id)
+                ->update($validatedData);
+        
+        return redirect('/dashboard/profile')->with('success', 'Profile has beed updated!'); 
     }
 }

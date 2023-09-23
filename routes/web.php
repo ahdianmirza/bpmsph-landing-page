@@ -34,6 +34,7 @@ Route::get('/dashboard/tables-konsultasi-kunjungan', [DashboardController::class
 Route::get('/dashboard/tables-sample-uji', [DashboardController::class, 'tablesUjiSample'])->middleware('auth');
 
 Route::get('/dashboard/profile', [DashboardController::class, 'profile'])->middleware('auth');
+Route::put('/dashboard/profile/{user_id}', [DashboardController::class, 'updateProfile'])->middleware('auth');
 
 Route::get('/', [InfodeskController::class, 'index']);
 

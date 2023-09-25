@@ -51,7 +51,7 @@
                                             <td>{{ $konsul->waktu }}</td>
                                             <td>{{ $konsul->staff }}</td>
                                             <td>{{ $konsul->tujuan }}</td>
-                                            <td>{{ $konsul->suhu }}</td>
+                                            <td>{{ $konsul->suhu }}°C</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

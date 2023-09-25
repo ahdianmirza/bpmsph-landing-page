@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\SensorSuhu;
+use App\Models\SubmitAlert;
 
 class SensorSuhuController extends Controller
 {

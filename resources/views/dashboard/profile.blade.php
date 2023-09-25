@@ -24,7 +24,11 @@
                             <img src="{{ asset('assets/img/niceadmin/profile-img.jpg') }}" alt="Profile"
                                 class="rounded-circle">
                             <h2>{{ auth()->user()->name }}</h2>
-                            <h3>{{ auth()->user()->job }}</h3>
+                            @if (auth()->user()->job === null)
+                                <h3 class="fst-italic">(No job found)</h3>
+                            @else
+                                <h3>{{ auth()->user()->job }}</h3>
+                            @endif
                         </div>
                     </div>
 
@@ -68,12 +72,20 @@
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Job</div>
-                                        <div class="col-lg-9 col-md-8">{{ auth()->user()->job }}</div>
+                                        @if (auth()->user()->job === null)
+                                            <div class="col-lg-9 col-md-8 fst-italic">(No job found)</div>
+                                        @else
+                                            <div class="col-lg-9 col-md-8">{{ auth()->user()->job }}</div>
+                                        @endif
                                     </div>
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Phone</div>
-                                        <div class="col-lg-9 col-md-8">{{ auth()->user()->phone }}</div>
+                                        @if (auth()->user()->phone === null)
+                                            <div class="col-lg-9 col-md-8 fst-italic">(No phone found)</div>
+                                        @else
+                                            <div class="col-lg-9 col-md-8">{{ auth()->user()->phone }}</div>
+                                        @endif
                                     </div>
 
                                     <div class="row">

@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\SensorSuhu;
+use App\Models\SubmitAlert;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,5 +21,19 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        SensorSuhu::create([
+            'suhu' => '10'
+        ]);
+
+        User::create([
+            'name' => 'Ahdian Mirza Azri',
+            'email' => 'ahdianmirza@gmail.com',
+            'password' => bcrypt('ahdian06')
+        ]);
+
+        SubmitAlert::create([
+            'submitKonsul' => 0
+        ]);
     }
 }

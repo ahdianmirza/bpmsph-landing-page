@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\KonsulKunjungan;
 use App\Models\Sampleuji;
+use App\Models\SubmitAlert;
 use Illuminate\Http\Request;
 
 class FormController extends Controller
@@ -28,7 +29,14 @@ class FormController extends Controller
             'suhu' => 'required'
         ]);
         
-        KonsulKunjungan::create($validatedData);
+        $konsulKunjunganResult = KonsulKunjungan::create($validatedData);
+
+        if($konsulKunjunganResult) {
+            SubmitAlert::firstWhere('id', '1')->update([
+                'submitKonsul' => 1
+            ]);
+        }
+
         return redirect('/konsultasi-kunjungan')->with('success', 'New data has been added');
     }
 

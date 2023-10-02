@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('submit_alerts', function (Blueprint $table) {
             $table->id();
-            $table->boolean('submitKonsul')->default(0);
+            $table->string('submitKonsul')->nullable();
             $table->timestamps();
         });
     }

@@ -2,7 +2,7 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="d-flex align-items-center justify-content-between">
         <a href="/" class="logo d-flex align-items-center">
-            <img src="assets/img/logo.png" alt="Logo BPMSPH">
+            <img src="{{ asset('assets/img/logo.png') }}" alt="Logo BPMSPH">
             <span class="d-none d-lg-block ms-2">Welcome!</span>
         </a>
     </div><!-- End Logo -->

@@ -39,7 +39,8 @@
         $(document).ready(() => {
             setInterval(() => {
                 tampilSuhu();
-            }, 1000);
+                tampilNomorAntrian();
+            }, 500);
         })
 
         function tampilSuhu() {
@@ -51,6 +52,20 @@
                     $.each(data, function(key, values) {
                         suhu = data[key].suhu;
                         $('#suhu').val(suhu);
+                    })
+                }
+            })
+        }
+
+        function tampilNomorAntrian() {
+            $.ajax({
+                url: "{{ route('nomorantrian', 'nomorAntrian') }}",
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    $.each(data, function(key, values) {
+                        nomorAntrian = data[key].nomorAntrian;
+                        $('#nomorAntrian').val(nomorAntrian);
                     })
                 }
             })

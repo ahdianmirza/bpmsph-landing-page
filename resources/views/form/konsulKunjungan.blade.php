@@ -156,8 +156,26 @@
                                                 </div>
                                             @enderror
                                         </div>
-                                        <div>
-                                            {{-- <span id="suhu">0</span> --}}
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="d-flex flex-column">
+                                        <label for="nomorAntrianFix" class="col col-form-label">Nomor Antrian</label>
+                                        <div class="col">
+                                            <div class="d-flex column-gap-2">
+                                                <input type="text"
+                                                    class="form-control @error('nomorAntrianFix') is-invalid @enderror"
+                                                    id="nomorAntrianFix" name="nomorAntrianFix" autocomplete="off"
+                                                    value="{{ old('nomorAntrianFix', $nomorAntrians->nomorAntrian) }}"
+                                                    required>
+                                                @error('nomorAntrianFix')
+                                                    <div class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+
+                                                <a href="/form/nomor-antrian" class="btn btn-secondary">Ambil</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\KonsulKunjungan;
+use App\Models\NomorAntrian;
 use App\Models\Sampleuji;
 use App\Models\SubmitAlert;
 use Illuminate\Http\Request;
@@ -12,11 +13,16 @@ class FormController extends Controller
 {
     public function konsulKunjungan() {
         return view('form.konsulKunjungan', [
-            'title' => 'Form Konsultasi Kunjungan'
+            'title' => 'Form Konsultasi Kunjungan',
+            'nomorAntrians' => NomorAntrian::first()
         ]);
     }
 
     public function konsulKunjunganStore(Request $request) {
+        SubmitAlert::firstWhere('id', '1')->update([
+                'submitKonsul' => 'tamu'
+        ]);
+
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'whatsapp' => 'required|max:255',
@@ -33,16 +39,23 @@ class FormController extends Controller
 
         if($konsulKunjunganResult) {
             SubmitAlert::firstWhere('id', '1')->update([
-                'submitKonsul' => 1
+                'submitKonsul' => 'T'
             ]);
         }
 
         return redirect('/konsultasi-kunjungan')->with('success', 'New data has been added');
     }
 
+    public function ambilNomorAntrian() {
+        return view('form.nomorAntrian', [
+            'title' => 'Ambil Nomor Antrian'
+        ]);
+    }
+
     public function sampleUji() {
         return view('form.sampleUji', [
-            'title' => 'Form Pengantaran Sample Uji'
+            'title' => 'Form Pengantaran Sample Uji',
+            'nomorAntrians' => NomorAntrian::first()
         ]);
     }
 
@@ -54,10 +67,18 @@ class FormController extends Controller
             'alamat' => 'required|max:255',
             'tanggal' => 'required',
             'waktu' => 'required',
-            'jenis' => 'required|max:255'
+            'jenis' => 'required|max:255',
+            'suhu' => 'required'
         ]);
 
-        Sampleuji::create($validatedData);
+        $sampleUjiResult = Sampleuji::create($validatedData);
+
+        if($sampleUjiResult) {
+            SubmitAlert::firstWhere('id', '1')->update([
+                'submitKonsul' => 'S'
+            ]);
+        }
+
         return redirect('/sample-uji')->with('success', 'New data has been added');
     }
 }

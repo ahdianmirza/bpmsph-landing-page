@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\NomorAntrian;
 use Illuminate\Database\Seeder;
 use App\Models\SensorSuhu;
 use App\Models\SubmitAlert;
@@ -23,7 +25,11 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         SensorSuhu::create([
-            'suhu' => '10'
+            'suhu' => '-'
+        ]);
+
+        NomorAntrian::create([
+            'nomorAntrian' => '-'
         ]);
 
         User::create([
@@ -33,7 +39,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         SubmitAlert::create([
-            'submitKonsul' => 0
+            'submitKonsul' => '0'
         ]);
     }
 }

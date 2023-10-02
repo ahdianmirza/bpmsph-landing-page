@@ -44,5 +44,10 @@ Route::post('/konsultasi-kunjungan', [FormController::class, 'konsulKunjunganSto
 Route::get('/sample-uji', [FormController::class, 'sampleUji']);
 Route::post('/sample-uji', [FormController::class, 'sampleUjiStore']);
 
+Route::get('/form/nomor-antrian', [FormController::class, 'ambilNomorAntrian']);
+
 Route::get('/bacasuhu/{suhu}', [SensorSuhuController::class, 'bacasuhu'])->name('bacasuhu');
 Route::get('/simpan/{suhu}', [SensorSuhuController::class, 'simpansuhu']);
+
+Route::get('/nomor-antrian/{nomorAntrian}', [SensorSuhuController::class, 'nomorAntrian'])->name('nomorantrian');
+Route::get('/simpan-nomor-antrian/{nomorAntrian}', [SensorSuhuController::class, 'simpanNomorAntrian']);

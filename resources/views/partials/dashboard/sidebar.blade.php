@@ -39,6 +39,12 @@
                         <i class="bi bi-circle"></i><span>Data Pengantaran Sample</span>
                     </a>
                 </li>
+                <li>
+                    <a href="/dashboard/tables-ulasan"
+                        class="{{ Request::is('dashboard/tables-ulasan') ? 'active' : '' }}">
+                        <i class="bi bi-circle"></i><span>Data Ulasan Pengunjung</span>
+                    </a>
+                </li>
             </ul>
         </li><!-- End Tables Nav -->
 

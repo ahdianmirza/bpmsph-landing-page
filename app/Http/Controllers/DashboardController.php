@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\KonsulKunjungan;
 use App\Models\Sampleuji;
+use App\Models\Ulasan;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -33,6 +34,13 @@ class DashboardController extends Controller
         return view('dashboard.tablesKonsulKunjungan', [
             'title' => 'Data Konsultasi / Kunjungan',
             'konsuls' => KonsulKunjungan::all()
+        ]);
+    }
+
+    public function tablesUlasan() {
+        return view('dashboard.tablesUlasan', [
+            'title' => 'Data Ulasan',
+            'ulasans' => Ulasan::all()
         ]);
     }
 

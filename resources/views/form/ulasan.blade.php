@@ -35,7 +35,7 @@
                                             <div class="btn-group d-flex justify-content-between" role="group">
                                                 <div class="d-flex flex-column justify-content-center align-items-center">
                                                     <input type="radio" class="btn-check" name="ulasan" id="tidak-puas"
-                                                        autocomplete="off" value="tidak-puas">
+                                                        autocomplete="off" value="Tidak Puas">
                                                     <label class="btn btn-outline-primary" for="tidak-puas">
                                                         <img src="assets/img/tidak-puas.png" alt="Tidak Puas"
                                                             width="70">
@@ -44,9 +44,9 @@
                                                 </div>
 
                                                 <div class="d-flex flex-column justify-content-center align-items-center">
-                                                    <input type="radio" class="btn-check" name="ulasan" id="btnradio2"
-                                                        autocomplete="off" value="kurang-puas">
-                                                    <label class="btn btn-outline-primary" for="btnradio2">
+                                                    <input type="radio" class="btn-check" name="ulasan" id="kurang-puas"
+                                                        autocomplete="off" value="Kurang Puas">
+                                                    <label class="btn btn-outline-primary" for="kurang-puas">
                                                         <img src="assets/img/kurang-puas.png" alt="Kurang Puas"
                                                             width="70">
                                                     </label>
@@ -54,18 +54,18 @@
                                                 </div>
 
                                                 <div class="d-flex flex-column justify-content-center align-items-center">
-                                                    <input type="radio" class="btn-check" name="ulasan" id="btnradio3"
-                                                        autocomplete="off" value="puas">
-                                                    <label class="btn btn-outline-primary" for="btnradio3">
+                                                    <input type="radio" class="btn-check" name="ulasan" id="puas"
+                                                        autocomplete="off" value="Puas">
+                                                    <label class="btn btn-outline-primary" for="puas">
                                                         <img src="assets/img/puas.png" alt="Puas" width="70">
                                                     </label>
                                                     <p class="mt-1"><small>Puas</small></p>
                                                 </div>
 
                                                 <div class="d-flex flex-column justify-content-center align-items-center">
-                                                    <input type="radio" class="btn-check" name="ulasan" id="btnradio4"
-                                                        autocomplete="off" value="sangat-puas">
-                                                    <label class="btn btn-outline-primary" for="btnradio4">
+                                                    <input type="radio" class="btn-check" name="ulasan" id="sangat-puas"
+                                                        autocomplete="off" value="Sangat Puas">
+                                                    <label class="btn btn-outline-primary" for="sangat-puas">
                                                         <img src="assets/img/sangat-puas.png" alt="Sangat Puas"
                                                             width="70">
                                                     </label>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Ulasan;
 use Illuminate\Http\Request;
 
 class UlasanController extends Controller
@@ -16,9 +17,10 @@ class UlasanController extends Controller
     public function ulasanStore(Request $request) {
         $validatedData = $request->validate([
             'ulasan' => 'required',
-            'komentar' => 'required'
+            'komentar' => 'required|max:255'
         ]);
 
-        dd($validatedData);
+        Ulasan::create($validatedData);
+        return redirect('/ulasan')->with('success', 'Ulasan berhasil dikirim');
     }
 }

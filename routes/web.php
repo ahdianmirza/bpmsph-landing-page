@@ -33,6 +33,7 @@ Route::get('/dashboard/data-suhu-pengunjung', [DashboardController::class, 'data
 
 Route::get('/dashboard/tables-konsultasi-kunjungan', [DashboardController::class, 'tablesKonsulKunjungan'])->middleware('auth');
 Route::get('/dashboard/tables-sample-uji', [DashboardController::class, 'tablesUjiSample'])->middleware('auth');
+Route::get('/dashboard/tables-ulasan', [DashboardController::class, 'tablesUlasan'])->middleware('auth');
 
 Route::get('/dashboard/profile', [DashboardController::class, 'profile'])->middleware('auth');
 Route::put('/dashboard/profile/{user_id}', [DashboardController::class, 'updateProfile'])->middleware('auth');

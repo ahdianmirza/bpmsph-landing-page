@@ -557,39 +557,39 @@
 
                                 <div class="col-lg-4">
 
-                                    <div
-                                        class="info-container d-flex flex-column align-items-center justify-content-center">
-                                        <div class="info-item d-flex">
+                                    <div class="info-container">
+                                        <div class="info-item d-flex justify-content-center align-items-center">
                                             <i class="bi bi-geo-alt flex-shrink-0"></i>
-                                            <div>
+                                            <div class="">
                                                 <h4>Location:</h4>
-                                                <p>Jl. Pemuda No.29A, Kecamatan Tanah Sareal, Kota Bogor, Jawa Barat
+                                                <p class="text-light">Jl. Pemuda No.29A, Kecamatan Tanah Sareal, Kota
+                                                    Bogor, Jawa Barat
                                                     16161</p>
                                             </div>
                                         </div><!-- End Info Item -->
 
-                                        <div class="info-item d-flex">
+                                        <div class="info-item">
                                             <i class="bi bi-envelope flex-shrink-0"></i>
-                                            <div>
+                                            <div class="">
                                                 <h4>Email:</h4>
-                                                <p>bpmsph@pertanian.go.id</p>
+                                                <p class="text-light">bpmsph@pertanian.go.id</p>
                                             </div>
                                         </div><!-- End Info Item -->
 
-                                        <div class="info-item d-flex">
+                                        <div class="info-item">
                                             <i class="bi bi-phone flex-shrink-0"></i>
                                             <div>
                                                 <h4>Call:</h4>
-                                                <p>+62 251 8353712</p>
+                                                <p class="text-light">+62 251 8353712</p>
                                             </div>
                                         </div><!-- End Info Item -->
 
-                                        <div class="info-item d-flex">
+                                        <div class="info-item">
                                             <i class="bi bi-clock flex-shrink-0"></i>
-                                            <div>
+                                            <div class="d-flex flex-column align-items-center justify-content-center">
                                                 <h4>Open Hours:</h4>
-                                                <p>Mon-Thur: 7:30AM - 4PM</p>
-                                                <p>Friday : 7:30AM - 4:30PM</p>
+                                                <p class="text-light">Mon-Thur: 7:30AM - 4PM</p>
+                                                <p class="text-light">Friday : 7:30AM - 4:30PM</p>
                                             </div>
                                         </div><!-- End Info Item -->
                                     </div>

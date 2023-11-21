@@ -29,6 +29,11 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('auth');
 
+Route::get('/dashboard/data-pegawai', [DashboardController::class, 'dataPegawai'])->middleware('auth');
+Route::get('/dashboard/data-pegawai/create', [DashboardController::class, 'dataPegawaiCreate'])->middleware('auth');
+Route::post('/dashboard/data-pegawai/create', [DashboardController::class, 'dataPegawaiStore'])->middleware('auth');
+Route::delete('/dashboard/data-pegawai/{pegawai_id}/delete', [DashboardController::class, 'dataPegawaiDestroy'])->middleware('auth');
+
 Route::get('/dashboard/data-suhu-pengunjung', [DashboardController::class, 'dataSuhuPengunjung'])->middleware('auth');
 
 Route::get('/dashboard/tables-konsultasi-kunjungan', [DashboardController::class, 'tablesKonsulKunjungan'])->middleware('auth');

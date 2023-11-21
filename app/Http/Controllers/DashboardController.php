@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\DataPegawai;
 use App\Models\KonsulKunjungan;
 use App\Models\Sampleuji;
 use App\Models\Ulasan;
@@ -15,6 +16,37 @@ class DashboardController extends Controller
         return view('dashboard.dashboard', [
             'title' => 'Dashboard'
         ]);
+    }
+
+    public function dataPegawai() {
+        return view('dashboard.dataPegawai.dataPegawai', [
+            'title' => 'Data Pegawai',
+            'pegawais' => DataPegawai::all()
+        ]);
+    }
+
+    public function dataPegawaiCreate() {
+        return view('dashboard.dataPegawai.createDataPegawai', [
+            'title' => 'Tambah Data Pegawai'
+        ]);
+    }
+
+    public function dataPegawaiStore(Request $request) {
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'jabatan' => 'required|max:255',
+            'whatsapp' => 'required|max:255',
+        ]);
+
+        DataPegawai::create($validatedData);
+
+        return redirect('/dashboard/data-pegawai')->with('success', 'Data berhasil ditambahkan !');
+    }
+
+    public function dataPegawaiDestroy($pegawai_id) {
+        $dataPegawai = DataPegawai::where('id', $pegawai_id);
+        $dataPegawai->delete();
+        return redirect('/dashboard/data-pegawai')->with('success', 'Data berhasil dihapus !');
     }
 
     public function dataSuhuPengunjung() {

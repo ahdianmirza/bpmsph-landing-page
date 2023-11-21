@@ -190,6 +190,4 @@
         </section>
 
     </main><!-- End #main -->
-
-    <script></script>
 @endsection

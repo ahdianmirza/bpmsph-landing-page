@@ -16,14 +16,14 @@
         <section class="section">
             <div class="row">
                 <div class="col">
-                    @if (session()->has('success'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('success') }}
-                        </div>
-                    @endif
-
                     <div class="card">
                         <div class="card-body">
+                            @if (session()->has('success'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
+
                             <h5 class="card-title">Identitas Pengunjung dan Keterangan Kunjungan</h5>
                             <!-- Horizontal Form -->
                             <form action="/konsultasi-kunjungan" method="post">
@@ -123,9 +123,9 @@
                                         <select class="form-select" name="staff" id="staff"
                                             aria-label="Default select example">
                                             <option selected disabled>Pilih staff</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                            @foreach ($pegawais as $pegawai)
+                                                <option value="{{ $pegawai->name }}">{{ $pegawai->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>

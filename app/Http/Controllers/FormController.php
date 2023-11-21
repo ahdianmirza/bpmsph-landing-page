@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\DataPegawai;
 use App\Models\KonsulKunjungan;
 use App\Models\NomorAntrian;
 use App\Models\Sampleuji;
@@ -14,7 +15,8 @@ class FormController extends Controller
     public function konsulKunjungan() {
         return view('form.konsulKunjungan', [
             'title' => 'Form Konsultasi Kunjungan',
-            'nomorAntrians' => NomorAntrian::first()
+            'nomorAntrians' => NomorAntrian::first(),
+            'pegawais' => DataPegawai::all()
         ]);
     }
 
@@ -37,13 +39,13 @@ class FormController extends Controller
         
         $konsulKunjunganResult = KonsulKunjungan::create($validatedData);
 
-        if($konsulKunjunganResult) {
-            SubmitAlert::firstWhere('id', '1')->update([
-                'submitKonsul' => 'T'
-            ]);
-        }
+        // if($konsulKunjunganResult) {
+        //     SubmitAlert::firstWhere('id', '1')->update([
+        //         'submitKonsul' => 'T'
+        //     ]);
+        // }
 
-        return redirect('/konsultasi-kunjungan')->with('success', 'New data has been added');
+        return redirect('/konsultasi-kunjungan')->with('success', 'Data berhasil ditambahkan');
     }
 
     public function ambilNomorAntrian() {
@@ -79,6 +81,6 @@ class FormController extends Controller
             ]);
         }
 
-        return redirect('/sample-uji')->with('success', 'New data has been added');
+        return redirect('/sample-uji')->with('success', 'Data berhasil ditambahkan');
     }
 }

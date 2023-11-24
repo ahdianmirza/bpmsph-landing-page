@@ -19,7 +19,7 @@
                     <div class="card">
                         <div class="card-body">
                             @if (session()->has('success'))
-                                <div class="alert alert-success" role="alert">
+                                <div class="alert alert-success mt-3" role="alert">
                                     {{ session('success') }}
                                 </div>
                             @endif
@@ -34,7 +34,7 @@
                                         <div class="col">
                                             <input type="text" class="form-control @error('name') is-invalid @enderror"
                                                 id="name" name="name" value="{{ old('name') }}"
-                                                onblur="checkForm()" autocomplete="off" autofocus required>
+                                                onkeyup="checkForm()" autocomplete="off" autofocus required>
                                             @error('name')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -50,7 +50,7 @@
                                             <input type="text"
                                                 class="form-control @error('whatsapp') is-invalid @enderror" id="whatsapp"
                                                 name="whatsapp" value="{{ old('whatsapp') }}" autocomplete="off"
-                                                onblur="checkForm()" required>
+                                                onkeyup="checkForm()" required>
                                             @error('whatsapp')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -65,7 +65,7 @@
                                         <div class="col">
                                             <input type="text" class="form-control @error('asal') is-invalid @enderror"
                                                 id="asal" name="asal" value="{{ old('asal') }}"
-                                                onblur="checkForm()" autocomplete="off" required>
+                                                onkeyup="checkForm()" autocomplete="off" required>
                                             @error('asal')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -80,7 +80,7 @@
                                         <div class="col">
                                             <input type="text" class="form-control @error('alamat') is-invalid @enderror"
                                                 id="alamat" name="alamat" value="{{ old('alamat') }}"
-                                                onblur="checkForm()" autocomplete="off" required>
+                                                onkeyup="checkForm()" autocomplete="off" required>
                                             @error('alamat')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -95,7 +95,7 @@
                                         <div class="col">
                                             <input type="date"
                                                 class="form-control @error('tanggal') is-invalid @enderror" id="tanggal"
-                                                name="tanggal" value="{{ old('tanggal') }}" onblur="checkForm()" required>
+                                                name="tanggal" value="{{ old('tanggal') }}" onfocus="checkForm()" required>
                                             @error('tanggal')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -110,7 +110,7 @@
                                         <div class="col">
                                             <input type="time" class="form-control @error('waktu') is-invalid @enderror"
                                                 id="waktu" name="waktu" value="{{ old('waktu') }}"
-                                                onblur="checkForm()" required>
+                                                onfocus="checkForm()" required>
                                             @error('waktu')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -123,7 +123,7 @@
                                     <div class="d-flex flex-column">
                                         <label for="staff" class="col col-form-label">Nama Staff</label>
                                         <select class="form-select" name="staff" id="staff"
-                                            aria-label="Default select example" onblur="checkForm()">
+                                            aria-label="Default select example" onfocus="checkForm()">
                                             <option selected disabled>Pilih staff</option>
                                             @foreach ($pegawais as $pegawai)
                                                 <option value="{{ $pegawai->name }}">{{ $pegawai->name }}</option>
@@ -138,7 +138,7 @@
                                             <input type="text"
                                                 class="form-control @error('tujuan') is-invalid @enderror" id="tujuan"
                                                 name="tujuan" value="{{ old('tujuan') }}" autocomplete="off"
-                                                onblur="checkForm()" required>
+                                                onkeyup="checkForm()" required>
                                             @error('tujuan')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}

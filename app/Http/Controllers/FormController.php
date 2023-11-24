@@ -39,11 +39,11 @@ class FormController extends Controller
         
         $konsulKunjunganResult = KonsulKunjungan::create($validatedData);
 
-        // if($konsulKunjunganResult) {
-        //     SubmitAlert::firstWhere('id', '1')->update([
-        //         'submitKonsul' => 'T'
-        //     ]);
-        // }
+        if($konsulKunjunganResult) {
+            SubmitAlert::firstWhere('id', '1')->update([
+                'submitKonsul' => 'T'
+            ]);
+        }
 
         return redirect('/konsultasi-kunjungan')->with('success', 'Data berhasil ditambahkan');
     }

@@ -47,7 +47,7 @@
                                             <td>{{ $konsul->whatsapp }}</td>
                                             <td>{{ $konsul->asal }}</td>
                                             <td>{{ $konsul->alamat }}</td>
-                                            <td>{{ $konsul->tanggal }}</td>
+                                            <td>{{ date('d-m-Y', strtotime($konsul->tanggal)) }}</td>
                                             <td>{{ $konsul->waktu }}</td>
                                             <td>{{ $konsul->staff }}</td>
                                             <td>{{ $konsul->tujuan }}</td>

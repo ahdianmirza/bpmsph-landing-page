@@ -45,7 +45,7 @@
                                             <td>{{ $sample->whatsapp }}</td>
                                             <td>{{ $sample->asal }}</td>
                                             <td>{{ $sample->alamat }}</td>
-                                            <td>{{ $sample->tanggal }}</td>
+                                            <td>{{ date('d-m-Y', strtotime($sample->tanggal)) }}</td>
                                             <td>{{ $sample->waktu }}</td>
                                             <td>{{ $sample->jenis }}</td>
                                         </tr>

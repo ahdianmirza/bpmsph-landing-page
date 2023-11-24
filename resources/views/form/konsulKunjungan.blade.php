@@ -26,15 +26,15 @@
 
                             <h5 class="card-title">Identitas Pengunjung dan Keterangan Kunjungan</h5>
                             <!-- Horizontal Form -->
-                            <form action="/konsultasi-kunjungan" method="post">
+                            <form action="/konsultasi-kunjungan" method="post" name="konsulForm">
                                 @csrf
                                 <div class="row mb-3">
                                     <div class="d-flex flex-column">
                                         <label for="name" class="col-form-label">Nama</label>
                                         <div class="col">
                                             <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                                id="name" name="name" value="{{ old('name') }}" autocomplete="off"
-                                                autofocus required>
+                                                id="name" name="name" value="{{ old('name') }}"
+                                                onblur="checkForm()" autocomplete="off" autofocus required>
                                             @error('name')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -49,7 +49,8 @@
                                         <div class="col">
                                             <input type="text"
                                                 class="form-control @error('whatsapp') is-invalid @enderror" id="whatsapp"
-                                                name="whatsapp" value="{{ old('whatsapp') }}" autocomplete="off" required>
+                                                name="whatsapp" value="{{ old('whatsapp') }}" autocomplete="off"
+                                                onblur="checkForm()" required>
                                             @error('whatsapp')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -63,8 +64,8 @@
                                         <label for="asal" class="col col-form-label">Instansi / Mandiri</label>
                                         <div class="col">
                                             <input type="text" class="form-control @error('asal') is-invalid @enderror"
-                                                id="asal" name="asal" value="{{ old('asal') }}" autocomplete="off"
-                                                required>
+                                                id="asal" name="asal" value="{{ old('asal') }}"
+                                                onblur="checkForm()" autocomplete="off" required>
                                             @error('asal')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -78,8 +79,8 @@
                                         <label for="alamat" class="col col-form-label">Alamat</label>
                                         <div class="col">
                                             <input type="text" class="form-control @error('alamat') is-invalid @enderror"
-                                                id="alamat" name="alamat" value="{{ old('alamat') }}" autocomplete="off"
-                                                required>
+                                                id="alamat" name="alamat" value="{{ old('alamat') }}"
+                                                onblur="checkForm()" autocomplete="off" required>
                                             @error('alamat')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -94,7 +95,7 @@
                                         <div class="col">
                                             <input type="date"
                                                 class="form-control @error('tanggal') is-invalid @enderror" id="tanggal"
-                                                name="tanggal" value="{{ old('tanggal') }}" required>
+                                                name="tanggal" value="{{ old('tanggal') }}" onblur="checkForm()" required>
                                             @error('tanggal')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -108,7 +109,8 @@
                                         <label for="waktu" class="col col-form-label">Waktu</label>
                                         <div class="col">
                                             <input type="time" class="form-control @error('waktu') is-invalid @enderror"
-                                                id="waktu" name="waktu" value="{{ old('waktu') }}" required>
+                                                id="waktu" name="waktu" value="{{ old('waktu') }}"
+                                                onblur="checkForm()" required>
                                             @error('waktu')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -121,7 +123,7 @@
                                     <div class="d-flex flex-column">
                                         <label for="staff" class="col col-form-label">Nama Staff</label>
                                         <select class="form-select" name="staff" id="staff"
-                                            aria-label="Default select example">
+                                            aria-label="Default select example" onblur="checkForm()">
                                             <option selected disabled>Pilih staff</option>
                                             @foreach ($pegawais as $pegawai)
                                                 <option value="{{ $pegawai->name }}">{{ $pegawai->name }}</option>
@@ -135,7 +137,8 @@
                                         <div class="col">
                                             <input type="text"
                                                 class="form-control @error('tujuan') is-invalid @enderror" id="tujuan"
-                                                name="tujuan" value="{{ old('tujuan') }}" autocomplete="off" required>
+                                                name="tujuan" value="{{ old('tujuan') }}" autocomplete="off"
+                                                onblur="checkForm()" required>
                                             @error('tujuan')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -149,7 +152,8 @@
                                         <label for="suhu" class="col col-form-label">Suhu</label>
                                         <div class="col">
                                             <input type="text" class="form-control @error('suhu') is-invalid @enderror"
-                                                id="suhu" name="suhu" autocomplete="off" required>
+                                                id="suhu" name="suhu" autocomplete="off" onblur="checkForm()"
+                                                required>
                                             @error('suhu')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -165,7 +169,8 @@
                                             <div class="d-flex column-gap-2">
                                                 <input type="text"
                                                     class="form-control @error('nomorAntrianFix') is-invalid @enderror"
-                                                    id="nomorAntrianFix" name="nomorAntrianFix" autocomplete="off"
+                                                    id="nomorAntrianFix" name="nomorAntrianFix" onblur="checkForm()"
+                                                    autocomplete="off"
                                                     value="{{ old('nomorAntrianFix', $nomorAntrians->nomorAntrian) }}"
                                                     required>
                                                 @error('nomorAntrianFix')
@@ -180,14 +185,83 @@
                                     </div>
                                 </div>
                                 <div class="d-grid">
-                                    <button type="submit" class="btn btn-primary col">Submit</button>
+                                    <button type="button" class="btn btn-primary col" id="submitButton"
+                                        disabled="disabled" data-bs-toggle="modal" data-bs-target="#confirmModal"
+                                        value="Send Data">Kirim</button>
                                 </div>
+
+                                {{-- Confirm Modal Start --}}
+                                <div class="modal fade" id="confirmModal" tabindex="-1"
+                                    aria-labelledby="confirmModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-scrollable">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="confirmModalLabel">Pakta Integritas</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close" value="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Mohon dibaca dengan hati-hati oleh pengguna layanan BPMSPH. Pakta
+                                                    Integritas ini antara pengguna
+                                                    layanan dan kami yang memberikan layanan di BPMSPH Bogor. BPMSPH Bogor
+                                                    menerapkan ISO 9001:2015
+                                                    tentang Sistem Manajemen Mutu, ISO 14001:2015 tentang Sistem Manajemen
+                                                    Lingkungan, dan ISO
+                                                    37001:2016 tentang Sistem Manajemen Anti Penyuapan. Selaku pengguna
+                                                    layanan saya akan menyetujui
+                                                    persyaratan dan ketentuan kami :</p>
+                                                <ol>
+                                                    <li>Tidak akan melakukan praktek Kolusi, Korupsi, Nepotisme (KKN) dan
+                                                        Suap, Pungli, Gratifikasi
+                                                        (SPG);</li>
+                                                    <li>Akan melaporkan kepada pihak yang bertanggung jawab / berwajib /
+                                                        berwenang apabila mengetahui
+                                                        ada indikasi KKN dan SPG di dalam proses pelayanan ini;</li>
+                                                    <li>Apabila melanggar hal-hal yang telah saya nyatakan dalam PAKTA
+                                                        INTEGRITAS (KKN-SPG) ini saya
+                                                        bersedia dikenakan sanksi moral, sanksi administrasi sesuai dengan
+                                                        ketentuan peraturan
+                                                        perundang-undangan yang berlaku.</li>
+                                                </ol>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                                    value="Tutup">Tutup</button>
+                                                <button type="submit" class="btn btn-primary"
+                                                    value="kirim">Kirim</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- Confirm Modal End --}}
                             </form><!-- End Horizontal Form -->
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
     </main><!-- End #main -->
+
+    <script>
+        function checkForm() {
+            let konsulForm = document.forms['konsulForm'].elements;
+            console.info(konsulForm);
+            const submitButton = document.getElementById("submitButton");
+            let fieldMustBeFilled = true;
+
+            for (let i = 0; i < konsulForm.length; i++) {
+                if (konsulForm[i].value.length == 0) {
+                    fieldMustBeFilled = false;
+                }
+            }
+
+            console.info(fieldMustBeFilled);
+
+            if (fieldMustBeFilled) {
+                document.getElementById("submitButton").disabled = false;
+            } else {
+                document.getElementById("submitButton").disabled = true;
+            }
+        }
+    </script>
 @endsection

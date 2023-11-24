@@ -53,6 +53,8 @@ Route::post('/sample-uji', [FormController::class, 'sampleUjiStore']);
 
 Route::get('/ulasan', [UlasanController::class, 'index']);
 Route::post('/ulasan', [UlasanController::class, 'ulasanStore']);
+Route::get('/ulasan/ikm', [UlasanController::class, 'ikmIndex']);
+
 
 Route::get('/form/nomor-antrian', [FormController::class, 'ambilNomorAntrian']);
 

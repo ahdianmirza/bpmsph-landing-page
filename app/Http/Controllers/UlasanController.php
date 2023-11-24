@@ -21,6 +21,12 @@ class UlasanController extends Controller
         ]);
 
         Ulasan::create($validatedData);
-        return redirect('/ulasan')->with('success', 'Ulasan berhasil dikirim');
+        return redirect('/ulasan/ikm')->with('success', 'Ulasan berhasil dikirim');
+    }
+
+    public function ikmIndex() {
+        return view('form.ikm', [
+            'title' => 'Form IKM'
+        ]);
     }
 }

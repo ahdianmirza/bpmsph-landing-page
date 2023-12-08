@@ -22,3 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/submit-konsul', [ApiController::class, 'submitKonsul']);
 Route::post('/post-submit-konsul', [ApiController::class, 'postSubmitKonsul']);
 Route::post('/post-nomor-antrian', [ApiController::class, 'postNomorAntrian']);
+Route::get('/get-nomor-antrian', [ApiController::class, 'getNomorAntrian']);
+Route::get('/get-suhu', [ApiController::class, 'getSuhu']);
+Route::post('/post-suhu', [ApiController::class, 'postSuhu']);

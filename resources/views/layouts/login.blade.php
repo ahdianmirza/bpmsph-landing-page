@@ -33,7 +33,7 @@
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 </head>
 
-<body>
+<body style="background-image: url('assets/img/login-bg.png'); background-size: cover; background-position: center">
 
     @yield('container')
 

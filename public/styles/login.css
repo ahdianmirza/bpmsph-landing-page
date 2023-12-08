@@ -4,3 +4,9 @@
     background-color: white;
     border-radius: 8px;
 }
+
+.login-bg {
+    background-image: url('assets/img/login-bg.png');
+    background-size: cover;
+    background-position: center;
+}

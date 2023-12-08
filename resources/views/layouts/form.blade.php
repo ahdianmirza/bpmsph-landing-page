@@ -37,9 +37,9 @@
     <script>
         $(document).ready(() => {
             setInterval(() => {
-                tampilSuhu();
-                tampilNomorAntrian();
-            }, 500);
+                // tampilSuhu();
+                // tampilNomorAntrian();
+            }, 1000);
         })
 
         function tampilSuhu() {
@@ -50,7 +50,7 @@
                 success: function(data) {
                     $.each(data, function(key, values) {
                         suhu = data[key].suhu;
-                        $('#suhu').val(suhu);
+                        $('#suhufix').val(suhu);
                     })
                 }
             })

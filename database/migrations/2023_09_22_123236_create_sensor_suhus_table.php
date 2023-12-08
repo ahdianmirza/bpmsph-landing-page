@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('sensor_suhus', function (Blueprint $table) {
             $table->id();
-            $table->string('suhu');
+            $table->string('suhu')->nullable();
             $table->timestamps();
         });
     }

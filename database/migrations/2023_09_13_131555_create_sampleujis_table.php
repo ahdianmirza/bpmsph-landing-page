@@ -20,6 +20,8 @@ return new class extends Migration
             $table->date('tanggal');
             $table->string('waktu');
             $table->string('jenis');
+            $table->string('suhuSample')->nullable();
+            $table->string('nomorAntrianSample')->nullable();
             $table->timestamps();
         });
     }

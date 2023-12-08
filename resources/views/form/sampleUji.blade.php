@@ -156,15 +156,15 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="d-flex flex-column">
-                                        <label for="nomorAntrianFix" class="col col-form-label">Nomor Antrian</label>
+                                        <label for="nomorAntrian" class="col col-form-label">Nomor Antrian</label>
                                         <div class="col">
                                             <div class="d-flex column-gap-2">
                                                 <input type="text"
-                                                    class="form-control @error('nomorAntrianFix') is-invalid @enderror"
-                                                    id="nomorAntrianFix" name="nomorAntrianFix" autocomplete="off"
-                                                    value="{{ old('nomorAntrianFix', $nomorAntrians->nomorAntrian) }}"
+                                                    class="form-control @error('nomorAntrian') is-invalid @enderror"
+                                                    value="{{ old('nomorAntrian', $nomorAntrians->nomorAntrian) }}"
+                                                    id="nomorAntrian" name="nomorAntrian" autocomplete="off"
                                                     onblur="checkFormSample()" required>
-                                                @error('nomorAntrianFix')
+                                                @error('nomorAntrian')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>
@@ -255,6 +255,35 @@
             } else {
                 submitButtonSample.disabled = true;
             }
+        }
+    </script>
+
+    <script>
+        setInterval(() => {
+            getSuhuSample();
+            getAntrianSample();
+        }, 1000);
+
+        function getSuhuSample() {
+            const ajax = new XMLHttpRequest();
+            ajax.open("GET", "/api/get-suhu");
+            ajax.onload = () => {
+                const json = JSON.parse(ajax.responseText);
+                console.info("suhu = ", json[0].suhu);
+                document.getElementById("suhu").value = json[0].suhu;
+            };
+            ajax.send();
+        }
+
+        function getAntrianSample() {
+            const ajax = new XMLHttpRequest();
+            ajax.open("GET", "/api/get-nomor-antrian");
+            ajax.onload = () => {
+                const json = JSON.parse(ajax.responseText);
+                console.info("Antrian = ", json[0].nomorAntrian);
+                document.getElementById("nomorAntrian").value = json[0].nomorAntrian;
+            };
+            ajax.send();
         }
     </script>
 @endsection

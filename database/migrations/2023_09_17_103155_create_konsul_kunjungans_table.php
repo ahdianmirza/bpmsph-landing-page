@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('waktu');
             $table->string('staff');
             $table->string('tujuan');
-            $table->string('suhuKonsul')->nullable();
+            $table->string('suhu')->nullable();
             $table->string('nomorAntrianKonsul')->nullable();
             $table->timestamps();
         });

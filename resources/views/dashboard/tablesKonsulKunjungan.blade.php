@@ -37,6 +37,7 @@
                                         <th scope="col">Nama Staff</th>
                                         <th scope="col">Tujuan</th>
                                         <th scope="col">Suhu</th>
+                                        <th scope="col">Nomor Antrian</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -52,6 +53,7 @@
                                             <td>{{ $konsul->staff }}</td>
                                             <td>{{ $konsul->tujuan }}</td>
                                             <td>{{ $konsul->suhu }}°C</td>
+                                            <td>{{ $konsul->nomorAntrianKonsul }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

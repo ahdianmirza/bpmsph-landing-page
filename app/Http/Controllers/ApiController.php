@@ -4,23 +4,24 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\NomorAntrian;
+use App\Models\Posisi;
 use App\Models\SensorSuhu;
 use App\Models\SubmitAlert;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
-    public function submitKonsul() {
-        return SubmitAlert::first();
+    public function getSubmit() {
+        $dataSubmit = SubmitAlert::first();
+        return response()->json($dataSubmit);
     }
 
-    public function postSubmitKonsul() {
+    public function postSubmit() {
         $data_post = request()->all();
         $data = SubmitAlert::firstWhere('id', '1')->update([
             'submitKonsul' => $data_post['submitKonsul']
         ]);
-
-        // return response()->json($data);
+        return response()->json($data);
     }
 
     public function postNomorAntrian() {
@@ -47,5 +48,18 @@ class ApiController extends Controller
             'suhu' => $data_post['suhu']
         ]);
         return response()->json($dataSuhu);
+    }
+
+    public function postPosisi() {
+        $data_post = request()->all();
+        $dataPosisi = Posisi::firstWhere('id', '1')->update([
+            'posisi' => $data_post['posisi']
+        ]);
+        return response()->json($dataPosisi);
+    }
+
+    public function getPosisi() {
+        $dataPosisi = Posisi::firstWhere('id', '1');
+        return response()->json($dataPosisi);
     }
 }

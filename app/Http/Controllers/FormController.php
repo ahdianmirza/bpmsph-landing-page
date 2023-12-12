@@ -34,14 +34,15 @@ class FormController extends Controller
             'waktu' => 'required',
             'staff' => 'required',
             'tujuan' => 'required|max:255',
-            'suhu' => 'required'
+            'suhu' => 'required',
+            'nomorAntrianKonsul' => 'required'
         ]);
         
         $konsulKunjunganResult = KonsulKunjungan::create($validatedData);
 
         if($konsulKunjunganResult) {
             SubmitAlert::firstWhere('id', '1')->update([
-                'submitKonsul' => 'T'
+                'submitKonsul' => 'tamu'
             ]);
         }
 
@@ -70,14 +71,15 @@ class FormController extends Controller
             'tanggal' => 'required',
             'waktu' => 'required',
             'jenis' => 'required|max:255',
-            'suhu' => 'required'
+            'suhu' => 'required',
+            'nomorAntrian' => 'required'
         ]);
 
         $sampleUjiResult = Sampleuji::create($validatedData);
 
         if($sampleUjiResult) {
             SubmitAlert::firstWhere('id', '1')->update([
-                'submitKonsul' => 'S'
+                'submitKonsul' => 'sample'
             ]);
         }
 

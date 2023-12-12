@@ -29,8 +29,11 @@
                         <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
                             <div class="icon-box">
                                 <div class="icon"><i class="bi bi-card-checklist"></i></div>
-                                <h4 class="title"><a href="/sample-uji" class="stretched-link">Pengantaran
-                                        Sample Uji</a></h4>
+                                <h4 class="title">
+                                    <a href="/sample-uji" onmousedown="postPosisiSampleDashboard()"
+                                        class="stretched-link">Pengantaran
+                                        Sample Uji</a>
+                                </h4>
                             </div>
                         </div><!--End Icon Box -->
 
@@ -38,7 +41,8 @@
                             <div class="icon-box">
                                 <div class="icon"><i class="bi bi-card-list"></i></div>
                                 <h4 class="title">
-                                    <a href="/konsultasi-kunjungan" class="stretched-link">Konsultasi / Kunjungan</a>
+                                    <a href="/konsultasi-kunjungan" onmousedown="postPosisiKonsulDashboard()"
+                                        class="stretched-link">Konsultasi / Kunjungan</a>
                                 </h4>
                             </div>
                         </div><!--End Icon Box -->
@@ -622,4 +626,30 @@
 
     <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
+
+    <script>
+        function postPosisiKonsulDashboard() {
+            const ajaxTamu = new XMLHttpRequest();
+            ajaxTamu.open("POST", "/api/post-posisi");
+            ajaxTamu.onload = () => {
+                console.info(ajaxTamu.responseText);
+            };
+            ajaxTamu.setRequestHeader("Content-Type", "application/json");
+            ajaxTamu.send(JSON.stringify({
+                posisi: "tamu"
+            }));
+        }
+
+        function postPosisiSampleDashboard() {
+            const ajax = new XMLHttpRequest();
+            ajax.open("POST", "/api/post-posisi");
+            ajax.onload = () => {
+                console.info(ajax.responseText);
+            };
+            ajax.setRequestHeader("Content-Type", "application/json");
+            ajax.send(JSON.stringify({
+                posisi: "sample"
+            }));
+        }
+    </script>
 @endsection

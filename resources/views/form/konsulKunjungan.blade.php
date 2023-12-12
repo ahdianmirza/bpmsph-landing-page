@@ -168,18 +168,18 @@
                                         <div class="col">
                                             <div class="d-flex column-gap-2">
                                                 <input type="text"
-                                                    class="form-control @error('nomorAntrian') is-invalid @enderror"
-                                                    id="nomorAntrian" name="nomorAntrian" onblur="checkForm()"
-                                                    autocomplete="off"
-                                                    value="{{ old('nomorAntrian', $nomorAntrians->nomorAntrian) }}"
-                                                    required>
-                                                @error('nomorAntrian')
+                                                    class="form-control @error('nomorAntrianKonsul') is-invalid @enderror"
+                                                    value="{{ old('nomorAntrianKonsul', $nomorAntrians->nomorAntrian) }}"
+                                                    id="nomorAntrian" name="nomorAntrianKonsul" autocomplete="off"
+                                                    onblur="checkFormSample()" required>
+                                                @error('nomorAntrianKonsul')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>
                                                 @enderror
 
-                                                <a href="/form/nomor-antrian" class="btn btn-secondary">Ambil</a>
+                                                <button type="button" onclick="postPosisiKonsul()"
+                                                    class="btn btn-secondary" value="Ambil">Ambil</button>
                                             </div>
                                         </div>
                                     </div>
@@ -291,6 +291,18 @@
                 document.getElementById("nomorAntrian").value = json[0].nomorAntrian;
             };
             ajax.send();
+        }
+
+        function postPosisiKonsul() {
+            const ajax = new XMLHttpRequest();
+            ajax.open("POST", "/api/post-posisi");
+            ajax.onload = () => {
+                console.info(ajax.responseText);
+            };
+            ajax.setRequestHeader("Content-Type", "application/json");
+            ajax.send(JSON.stringify({
+                posisi: "tamu"
+            }));
         }
     </script>
 @endsection

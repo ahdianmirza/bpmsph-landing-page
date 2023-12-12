@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\NomorAntrian;
+use App\Models\Posisi;
 use Illuminate\Database\Seeder;
 use App\Models\SensorSuhu;
 use App\Models\SubmitAlert;
@@ -30,6 +31,10 @@ class DatabaseSeeder extends Seeder
 
         NomorAntrian::create([
             'nomorAntrian' => '-'
+        ]);
+
+        Posisi::create([
+            'posisi' => '-'
         ]);
 
         User::create([

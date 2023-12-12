@@ -35,6 +35,8 @@
                                         <th scope="col">Tanggal</th>
                                         <th scope="col">Waktu</th>
                                         <th scope="col">Jenis Sample</th>
+                                        <th scope="col">Suhu</th>
+                                        <th scope="col">Nomor Antrian</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -48,6 +50,8 @@
                                             <td>{{ date('d-m-Y', strtotime($sample->tanggal)) }}</td>
                                             <td>{{ $sample->waktu }}</td>
                                             <td>{{ $sample->jenis }}</td>
+                                            <td>{{ $sample->suhu }}</td>
+                                            <td>{{ $sample->nomorAntrian }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

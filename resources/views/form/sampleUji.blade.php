@@ -170,7 +170,8 @@
                                                     </div>
                                                 @enderror
 
-                                                <a href="/form/nomor-antrian" class="btn btn-secondary">Ambil</a>
+                                                <button type="button" onclick="postPosisiSample()"
+                                                    class="btn btn-secondary" value="Ambil">Ambil</button>
                                             </div>
                                         </div>
                                     </div>
@@ -284,6 +285,18 @@
                 document.getElementById("nomorAntrian").value = json[0].nomorAntrian;
             };
             ajax.send();
+        }
+
+        function postPosisiSample() {
+            const ajaxSample = new XMLHttpRequest();
+            ajaxSample.open("POST", "/api/post-posisi");
+            ajaxSample.onload = () => {
+                console.info(ajaxSample.responseText);
+            };
+            ajaxSample.setRequestHeader("Content-Type", "application/json");
+            ajaxSample.send(JSON.stringify({
+                posisi: "sample"
+            }));
         }
     </script>
 @endsection

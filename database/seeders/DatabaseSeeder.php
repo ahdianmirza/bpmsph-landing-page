@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\DataPegawai;
 use App\Models\NomorAntrian;
 use App\Models\Posisi;
 use Illuminate\Database\Seeder;

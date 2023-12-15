@@ -19,6 +19,13 @@
         </li><!-- End Data Pegawai Nav -->
 
         <li class="nav-item">
+            <a class="nav-link {{ Request::is('dashboard/antrian') ? '' : 'collapsed' }}" href="/dashboard/antrian">
+                <i class="bi bi-people"></i>
+                <span>Antrian</span>
+            </a>
+        </li><!-- End Data Pegawai Nav -->
+
+        <li class="nav-item">
             <a class="nav-link {{ Request::is('dashboard/data-suhu-pengunjung') ? '' : 'collapsed' }}"
                 href="/dashboard/data-suhu-pengunjung">
                 <i class="bi bi-thermometer-half"></i>

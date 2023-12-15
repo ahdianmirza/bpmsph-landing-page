@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Antrian;
 use App\Models\DataPegawai;
 use App\Models\KonsulKunjungan;
 use App\Models\NomorAntrian;
@@ -37,6 +38,20 @@ class FormController extends Controller
             'suhu' => 'required',
             'nomorAntrianKonsul' => 'required'
         ]);
+
+        $request->validate([
+            'name' => 'required|max:255',
+            'asal' => 'required|max:255',
+            'nomorAntrianKonsul' => 'required'
+        ]);
+
+        $dataAntrian = new Antrian();
+        $dataAntrian->name = $request->name;
+        $dataAntrian->asal = $request->asal;
+        $dataAntrian->keperluan = "konsultasi";
+        $dataAntrian->nomorAntrian = $request->nomorAntrianKonsul;
+        $dataAntrian->status = "menunggu";
+        $dataAntrian->save();
         
         $konsulKunjunganResult = KonsulKunjungan::create($validatedData);
 
@@ -47,12 +62,6 @@ class FormController extends Controller
         }
 
         return redirect('/konsultasi-kunjungan')->with('success', 'Data berhasil ditambahkan');
-    }
-
-    public function ambilNomorAntrian() {
-        return view('form.nomorAntrian', [
-            'title' => 'Ambil Nomor Antrian'
-        ]);
     }
 
     public function sampleUji() {

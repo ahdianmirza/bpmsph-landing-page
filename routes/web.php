@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AntrianController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\InfodeskController;
@@ -33,6 +34,11 @@ Route::get('/dashboard/data-pegawai', [DashboardController::class, 'dataPegawai'
 Route::get('/dashboard/data-pegawai/create', [DashboardController::class, 'dataPegawaiCreate'])->middleware('auth');
 Route::post('/dashboard/data-pegawai/create', [DashboardController::class, 'dataPegawaiStore'])->middleware('auth');
 Route::delete('/dashboard/data-pegawai/{pegawai_id}/delete', [DashboardController::class, 'dataPegawaiDestroy'])->middleware('auth');
+
+Route::get('/dashboard/antrian', [AntrianController::class, 'index'])->middleware('auth');
+Route::put('/dashboard/antrian/selesai', [AntrianController::class, 'antrianSelesai'])->middleware('auth');
+Route::put('/dashboard/antrian/{id}/proses', [AntrianController::class, 'antrianProses'])->middleware('auth');
+Route::put('/dashboard/antrian/{id}/menunggu', [AntrianController::class, 'antrianMenunggu'])->middleware('auth');
 
 Route::get('/dashboard/data-suhu-pengunjung', [DashboardController::class, 'dataSuhuPengunjung'])->middleware('auth');
 

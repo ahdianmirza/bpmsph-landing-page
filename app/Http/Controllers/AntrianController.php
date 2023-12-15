@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use App\Models\Antrian;
+use Illuminate\Http\Request;
+
+class AntrianController extends Controller
+{
+    public function index() {
+        return view('dashboard.antrian', [
+            'title' => 'Antrian',
+            'dataAntrian' => Antrian::all(),
+            'antrianProses' => Antrian::firstWhere('status', 'proses')
+        ]);
+    }
+
+    public function antrianSelesai() {
+        Antrian::firstWhere('status', 'proses')->update(['status' => 'selesai']);
+        return redirect('/dashboard/antrian')->with('success', 'Antrian berhasil diselesaikan');
+    }
+
+    public function antrianProses($id) {
+        Antrian::where('id', $id)->update(['status' => 'proses']);
+        return redirect('/dashboard/antrian')->with('success', 'Antrian berhasil diproses');
+    }
+
+    public function antrianMenunggu($id) {
+        Antrian::where('id', $id)->update(['status' => 'menunggu']);
+        return redirect('/dashboard/antrian')->with('success', 'Antrian kembali menunggu');
+    }
+}

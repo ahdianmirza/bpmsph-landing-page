@@ -20,6 +20,12 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Datatables</h5>
+                            @if (session()->has('success'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
+
                             <div class="mb-3">
                                 <h4>Antrian saat ini
                                     <span class="badge bg-warning">
@@ -31,11 +37,19 @@
                                     </span>
                                 </h4>
                                 {{-- <button type="button" class="btn btn-primary">Mulai Antrian</button> --}}
-                                <form action="/dashboard/antrian/selesai" method="post">
-                                    @method('put')
-                                    @csrf
-                                    <button class="btn btn-success">Selesai</button>
-                                </form>
+                                @if ($antrianProses)
+                                    <form action="/dashboard/antrian/selesai" method="post">
+                                        @method('put')
+                                        @csrf
+                                        <button class="btn btn-success">Selesai</button>
+                                    </form>
+                                @else
+                                    <form action="/dashboard/antrian/selesai" method="post">
+                                        @method('put')
+                                        @csrf
+                                        <button class="btn btn-success" disabled>Selesai</button>
+                                    </form>
+                                @endif
                             </div>
 
                             <!-- Table with stripped rows -->

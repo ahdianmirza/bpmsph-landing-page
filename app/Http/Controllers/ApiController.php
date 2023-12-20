@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Antrian;
 use App\Models\NomorAntrian;
 use App\Models\Posisi;
 use App\Models\SensorSuhu;
@@ -61,5 +62,11 @@ class ApiController extends Controller
     public function getPosisi() {
         $dataPosisi = Posisi::firstWhere('id', '1');
         return response()->json($dataPosisi);
+    }
+
+
+    public function getAntrian() {
+        $dataAntrian = Antrian::firstWhere('status', 'proses');
+        return response()->json($dataAntrian);
     }
 }

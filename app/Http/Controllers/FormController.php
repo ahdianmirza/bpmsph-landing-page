@@ -84,6 +84,20 @@ class FormController extends Controller
             'nomorAntrian' => 'required'
         ]);
 
+        $request->validate([
+            'name' => 'required|max:255',
+            'asal' => 'required|max:255',
+            'nomorAntrian' => 'required'
+        ]);
+
+        $dataAntrianSample = new Antrian();
+        $dataAntrianSample->name = $request->name;
+        $dataAntrianSample->asal = $request->asal;
+        $dataAntrianSample->keperluan = "sample";
+        $dataAntrianSample->nomorAntrian = $request->nomorAntrian;
+        $dataAntrianSample->status = "menunggu";
+        $dataAntrianSample->save();
+
         $sampleUjiResult = Sampleuji::create($validatedData);
 
         if($sampleUjiResult) {

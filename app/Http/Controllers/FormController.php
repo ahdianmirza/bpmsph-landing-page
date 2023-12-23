@@ -41,14 +41,18 @@ class FormController extends Controller
 
         $request->validate([
             'name' => 'required|max:255',
+            'whatsapp' => 'required|max:255',
             'asal' => 'required|max:255',
+            'staff' => 'required',
             'nomorAntrianKonsul' => 'required'
         ]);
 
         $dataAntrian = new Antrian();
         $dataAntrian->name = $request->name;
+        $dataAntrian->whatsapp = $request->whatsapp;
         $dataAntrian->asal = $request->asal;
         $dataAntrian->keperluan = "konsultasi";
+        $dataAntrian->staff = $request->staff;
         $dataAntrian->nomorAntrian = $request->nomorAntrianKonsul;
         $dataAntrian->status = "menunggu";
         $dataAntrian->save();
@@ -86,12 +90,14 @@ class FormController extends Controller
 
         $request->validate([
             'name' => 'required|max:255',
+            'whatsapp' => 'required|max:255',
             'asal' => 'required|max:255',
             'nomorAntrian' => 'required'
         ]);
 
         $dataAntrianSample = new Antrian();
         $dataAntrianSample->name = $request->name;
+        $dataAntrianSample->whatsapp = $request->whatsapp;
         $dataAntrianSample->asal = $request->asal;
         $dataAntrianSample->keperluan = "sample";
         $dataAntrianSample->nomorAntrian = $request->nomorAntrian;

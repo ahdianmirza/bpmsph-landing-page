@@ -99,6 +99,8 @@
                                                                 @csrf
                                                                 <button class="btn btn-secondary btn-sm">Pending</button>
                                                             </form>
+                                                            <button id="panggilButton" type="submit" onclick="panggil()"
+                                                                class="btn btn-info btn-sm">Panggil</button>
                                                         </div>
                                                     </td>
                                                 @endif
@@ -165,4 +167,42 @@
             </div>
         </section>
     </main><!-- End #main -->
+
+    <script>
+        const panggilButton = document.getElementById('panggilButton');
+
+        function getAntrianProses() {
+            const request = new Request("/api/get-antrian", {
+                method: "GET"
+            });
+            const response = fetch(request);
+            return response.then((response) => response.json());
+        }
+
+        async function getAntrianProsesAsync() {
+            const antrian = await getAntrianProses();
+            return antrian.whatsapp;
+        }
+
+        const panggil = (e) => {
+            getAntrianProses()
+                .then((antrian) => {
+                    console.info(antrian);
+                    const message = formatMessage(antrian);
+                    window.open(
+                        `http://wa.me/62${parseInt(antrian.whatsapp)}?text=${encodeURIComponent(message)}`
+                    );
+                });
+        }
+
+        const formatMessage = (obj) => {
+            return `Nomor Antrian Telah Diproses\n
+Nama: ${obj.name}
+Instansi: ${obj.asal}
+Keperluan: ${obj.keperluan}
+Nomor Antrian: ${obj.nomorAntrian}
+Silahkan mengunjungi layanan terkait\n
+Terima Kasih.`;
+        };
+    </script>
 @endsection

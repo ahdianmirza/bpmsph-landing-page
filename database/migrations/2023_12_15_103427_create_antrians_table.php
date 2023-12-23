@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('antrians', function (Blueprint $table) {
             $table->id();
             $table->string("name");
+            $table->string("whatsapp");
             $table->string("asal");
             $table->string("keperluan");
+            $table->string("staff")->nullable()->default(null);
             $table->string("nomorAntrian");
             $table->string("status");
             $table->timestamps();

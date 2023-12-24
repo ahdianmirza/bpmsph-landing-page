@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Antrian;
+use App\Models\DataPegawai;
 use App\Models\NomorAntrian;
 use App\Models\Posisi;
 use App\Models\SensorSuhu;
@@ -66,7 +67,13 @@ class ApiController extends Controller
 
 
     public function getAntrian() {
-        $dataAntrian = Antrian::firstWhere('status', 'proses');
+        // $dataAntrian = Antrian::firstWhere('status', 'proses');
+        $dataAntrian = Antrian::all();
         return response()->json($dataAntrian);
+    }
+
+    public function getDataPegawai() {
+        $dataNomorPegawai = DataPegawai::all();
+        return response()->json($dataNomorPegawai);
     }
 }

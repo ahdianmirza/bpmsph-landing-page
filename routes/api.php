@@ -28,4 +28,5 @@ Route::post('/post-suhu', [ApiController::class, 'postSuhu']);
 Route::get('/get-posisi', [ApiController::class, 'getPosisi']);
 Route::post('/post-posisi', [ApiController::class, 'postPosisi']);
 Route::get('/get-antrian', [ApiController::class, 'getAntrian']);
+Route::get('/get-antrian-proses', [ApiController::class, 'getAntrianProses']);
 Route::get('/get-data-pegawai', [ApiController::class, 'getDataPegawai']);

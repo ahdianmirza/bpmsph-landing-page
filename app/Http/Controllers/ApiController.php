@@ -76,4 +76,9 @@ class ApiController extends Controller
         $dataNomorPegawai = DataPegawai::all();
         return response()->json($dataNomorPegawai);
     }
+
+    public function getAntrianProses() {
+        $antrianProses = Antrian::firstWhere('status', 'proses');
+        return response()->json($antrianProses);
+    }
 }

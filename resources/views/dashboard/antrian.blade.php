@@ -36,20 +36,35 @@
                                         @endif
                                     </span>
                                 </h4>
-                                {{-- <button type="button" class="btn btn-primary">Mulai Antrian</button> --}}
-                                @if ($antrianProses)
-                                    <form action="/dashboard/antrian/selesai" method="post">
-                                        @method('put')
-                                        @csrf
-                                        <button class="btn btn-success">Selesai</button>
-                                    </form>
-                                @else
-                                    <form action="/dashboard/antrian/selesai" method="post">
-                                        @method('put')
-                                        @csrf
-                                        <button class="btn btn-success" disabled>Selesai</button>
-                                    </form>
-                                @endif
+                                <div class="d-flex column-gap-2">
+                                    @if ($antrianProses)
+                                        <form action="/dashboard/antrian/selesai" method="post">
+                                            @method('put')
+                                            @csrf
+                                            <button class="btn btn-success">Selesai</button>
+                                        </form>
+                                    @else
+                                        <form action="/dashboard/antrian/selesai" method="post">
+                                            @method('put')
+                                            @csrf
+                                            <button class="btn btn-success" disabled>Selesai</button>
+                                        </form>
+                                    @endif
+
+                                    @if (count($antrianSelesai) > 0)
+                                        <form action="/dashboard/antrian/destroy" method="post">
+                                            @method('delete')
+                                            @csrf
+                                            <button class="btn btn-danger">Hapus Antrian Selesai</button>
+                                        </form>
+                                    @else
+                                        <form action="/dashboard/antrian/destroy" method="post">
+                                            @method('delete')
+                                            @csrf
+                                            <button class="btn btn-danger" disabled>Hapus Antrian Selesai</button>
+                                        </form>
+                                    @endif
+                                </div>
                             </div>
 
                             <!-- Table with stripped rows -->
@@ -221,7 +236,8 @@
                                                                         <button
                                                                             class="btn btn-primary btn-sm">Mulai</button>
                                                                     </form>
-                                                                    <button type="button" class="btn btn-secondary btn-sm"
+                                                                    <button type="button"
+                                                                        class="btn btn-secondary btn-sm"
                                                                         disabled>Pending</button>
                                                                     <button id="panggilButton" type="submit"
                                                                         value="{{ $antrian->id }}"

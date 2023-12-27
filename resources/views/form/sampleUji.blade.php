@@ -2,15 +2,20 @@
 
 @section('container')
     <main id="main" class="main">
-        <div class="pagetitle">
-            <h1>Form Pengantaran Sample Uji</h1>
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item">Forms</li>
-                    <li class="breadcrumb-item active">Sample Uji</li>
-                </ol>
-            </nav>
+        <div class="pagetitle d-flex column-gap-3 align-items-center">
+            <a href="/" class="btn btn-primary">
+                <i class="bi bi-arrow-left-short"></i> Home
+            </a>
+            <div>
+                <h1>Form Pengantaran Sample Uji</h1>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item">Forms</li>
+                        <li class="breadcrumb-item active">Sample Uji</li>
+                    </ol>
+                </nav>
+            </div>
         </div><!-- End Page Title -->
 
         <section class="section">

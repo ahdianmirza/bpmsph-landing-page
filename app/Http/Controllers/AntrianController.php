@@ -31,4 +31,9 @@ class AntrianController extends Controller
         Antrian::where('id', $id)->update(['status' => 'menunggu']);
         return redirect('/dashboard/antrian')->with('success', 'Antrian kembali menunggu');
     }
+
+    public function destroyAntrianSelesai() {
+        Antrian::where('status', 'selesai')->delete();
+        return redirect('/dashboard/antrian')->with('success', 'Antrian berhasil dihapus');
+    }
 }

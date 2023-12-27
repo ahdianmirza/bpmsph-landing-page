@@ -7,6 +7,7 @@ use App\Models\DataPegawai;
 use App\Models\KonsulKunjungan;
 use App\Models\Notifikasi;
 use App\Models\Sampleuji;
+use App\Models\SuhuPengunjung;
 use App\Models\Ulasan;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -67,7 +68,8 @@ class DashboardController extends Controller
         return view('dashboard.tablesSuhuPengunjung', [
             'title' => 'Data Suhu Pengunjung',
             'dataNotifikasiUnchecked' => Notifikasi::where('checked', 0)->get(),
-            'dataNotifikasi' => Notifikasi::latest()->get()
+            'dataNotifikasi' => Notifikasi::latest()->get(),
+            'dataSuhu' => SuhuPengunjung::all()
         ]);
     }
 

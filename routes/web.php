@@ -44,7 +44,6 @@ Route::put('/dashboard/antrian/{id}/menunggu', [AntrianController::class, 'antri
 Route::delete('/dashboard/antrian/destroy', [AntrianController::class, 'destroyAntrianSelesai'])->middleware('auth');
 
 Route::get('/dashboard/data-suhu-pengunjung', [DashboardController::class, 'dataSuhuPengunjung'])->middleware('auth');
-
 Route::get('/dashboard/tables-konsultasi-kunjungan', [DashboardController::class, 'tablesKonsulKunjungan'])->middleware('auth');
 Route::get('/dashboard/tables-sample-uji', [DashboardController::class, 'tablesUjiSample'])->middleware('auth');
 Route::get('/dashboard/tables-ulasan', [DashboardController::class, 'tablesUlasan'])->middleware('auth');

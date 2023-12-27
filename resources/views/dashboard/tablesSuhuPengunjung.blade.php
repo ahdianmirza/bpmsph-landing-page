@@ -7,7 +7,7 @@
             <h1>Data Suhu Pengunjung</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
                     <li class="breadcrumb-item">Tables</li>
                     <li class="breadcrumb-item active">Data Suhu Pengunjung</li>
                 </ol>
@@ -29,32 +29,21 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Nama</th>
-                                        <th scope="col">No. WhatsApp</th>
                                         <th scope="col">Instansi / Mandiri</th>
-                                        <th scope="col">Alamat</th>
-                                        <th scope="col">Tanggal</th>
-                                        <th scope="col">Waktu</th>
-                                        <th scope="col">Nama Staff</th>
-                                        <th scope="col">Tujuan</th>
+                                        <th scope="col">Keperluan</th>
+                                        <th scope="col">Suhu</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>ui</td>
-                                    </tr>
-                                    {{-- @foreach ($konsuls as $konsul)
+                                    @foreach ($dataSuhu as $suhu)
                                         <tr>
-                                            <th scope="row">{{ $loop->iteration }}</th>
-                                            <td>{{ $konsul->name }}</td>
-                                            <td>{{ $konsul->whatsapp }}</td>
-                                            <td>{{ $konsul->asal }}</td>
-                                            <td>{{ $konsul->alamat }}</td>
-                                            <td>{{ $konsul->tanggal }}</td>
-                                            <td>{{ $konsul->waktu }}</td>
-                                            <td>{{ $konsul->staff }}</td>
-                                            <td>{{ $konsul->tujuan }}</td>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $suhu->name }}</td>
+                                            <td>{{ $suhu->asal }}</td>
+                                            <td>{{ $suhu->keperluan }}</td>
+                                            <td>{{ floatval($suhu->suhu) }}°C</td>
                                         </tr>
-                                    @endforeach --}}
+                                    @endforeach
                                 </tbody>
                             </table>
                             <!-- End Table with stripped rows -->

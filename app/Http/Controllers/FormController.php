@@ -9,6 +9,7 @@ use App\Models\KonsulKunjungan;
 use App\Models\NomorAntrian;
 use App\Models\Sampleuji;
 use App\Models\SubmitAlert;
+use App\Models\SuhuPengunjung;
 use Illuminate\Http\Request;
 
 class FormController extends Controller
@@ -44,8 +45,16 @@ class FormController extends Controller
             'whatsapp' => 'required|max:255',
             'asal' => 'required|max:255',
             'staff' => 'required',
+            'suhu' => 'required',
             'nomorAntrianKonsul' => 'required'
         ]);
+
+        $dataSuhu = new SuhuPengunjung();
+        $dataSuhu->name = $request->name;
+        $dataSuhu->asal = $request->asal;
+        $dataSuhu->keperluan = "konsultasi";
+        $dataSuhu->suhu = $request->suhu;
+        $dataSuhu->save();
 
         $dataAntrian = new Antrian();
         $dataAntrian->name = $request->name;
@@ -92,8 +101,16 @@ class FormController extends Controller
             'name' => 'required|max:255',
             'whatsapp' => 'required|max:255',
             'asal' => 'required|max:255',
+            'suhu' => 'required',
             'nomorAntrian' => 'required'
         ]);
+
+        $dataSuhu = new SuhuPengunjung();
+        $dataSuhu->name = $request->name;
+        $dataSuhu->asal = $request->asal;
+        $dataSuhu->keperluan = "sample";
+        $dataSuhu->suhu = $request->suhu;
+        $dataSuhu->save();
 
         $dataAntrianSample = new Antrian();
         $dataAntrianSample->name = $request->name;

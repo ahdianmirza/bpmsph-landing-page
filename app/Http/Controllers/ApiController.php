@@ -67,7 +67,6 @@ class ApiController extends Controller
 
 
     public function getAntrian() {
-        // $dataAntrian = Antrian::firstWhere('status', 'proses');
         $dataAntrian = Antrian::all();
         return response()->json($dataAntrian);
     }

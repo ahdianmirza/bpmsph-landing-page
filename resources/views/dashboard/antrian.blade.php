@@ -56,7 +56,6 @@
                             <table class="table datatable">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
                                         <th scope="col">Nama</th>
                                         <th scope="col">Instansi / Mandiri</th>
                                         <th scope="col">Keperluan</th>
@@ -67,212 +66,247 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($dataAntrian as $antrian)
+                                    @foreach ($antrianSelesai as $selesai)
                                         <tr>
-                                            <th scope="row">{{ $loop->iteration }}</th>
-                                            <td>{{ $antrian->name }}</td>
-                                            <td>{{ $antrian->asal }}</td>
-                                            <td>{{ $antrian->keperluan }}</td>
-                                            @if ($antrian->keperluan === 'konsultasi')
-                                                <td>{{ $antrian->staff }}</td>
+                                            <td>{{ $selesai->name }}</td>
+                                            <td>{{ $selesai->asal }}</td>
+                                            <td>{{ $selesai->keperluan }}</td>
+                                            @if ($selesai->keperluan === 'konsultasi')
+                                                <td>{{ $selesai->staff }}</td>
                                             @else
                                                 <td>-</td>
                                             @endif
-                                            <td>{{ $antrian->nomorAntrian }}</td>
-                                            @if ($antrianProses)
-                                                @if ($antrian->keperluan === 'konsultasi')
-                                                    @if ($antrian->status === 'menunggu')
-                                                        <td>
-                                                            <div class="btn btn-danger btn-sm">Menunggu</div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="d-flex column-gap-1">
-                                                                <button type="button" class="btn btn-primary btn-sm"
-                                                                    disabled>Mulai</button>
-                                                                <button type="button" class="btn btn-secondary btn-sm"
-                                                                    disabled>Pending</button>
-                                                                <button id="panggilButton" type="submit"
-                                                                    value="{{ $antrian->id }}" onclick="panggil(value)"
-                                                                    class="btn btn-info btn-sm">Panggil</button>
-                                                                <button id="ingatkanButton" type="submit"
-                                                                    value="{{ $antrian->staff }}" onclick="ingatkan(value)"
-                                                                    class="btn btn-info btn-sm">Ingatkan</button>
-                                                            </div>
-                                                        </td>
-                                                    @endif
-                                                    @if ($antrian->status === 'proses')
-                                                        <td>
-                                                            <div class="btn btn-warning btn-sm">Proses</div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="d-flex column-gap-1">
-                                                                <button type="button" class="btn btn-primary btn-sm"
-                                                                    disabled>Mulai</button>
-                                                                <form
-                                                                    action="/dashboard/antrian/{{ $antrian->id }}/menunggu"
-                                                                    method="post">
-                                                                    @method('put')
-                                                                    @csrf
-                                                                    <button
-                                                                        class="btn btn-secondary btn-sm">Pending</button>
-                                                                </form>
-                                                            </div>
-                                                        </td>
-                                                    @endif
-                                                    @if ($antrian->status === 'selesai')
-                                                        <td>
-                                                            <div class="btn btn-success btn-sm">Selesai</div>
-                                                        </td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-primary btn-sm"
-                                                                disabled>Mulai</button>
-                                                            <button type="button" class="btn btn-secondary btn-sm"
-                                                                disabled>Pending</button>
-                                                        </td>
-                                                    @endif
-                                                @else
-                                                    @if ($antrian->status === 'menunggu')
-                                                        <td>
-                                                            <div class="btn btn-danger btn-sm">Menunggu</div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="d-flex column-gap-1">
-                                                                <button type="button" class="btn btn-primary btn-sm"
-                                                                    disabled>Mulai</button>
-                                                                <button type="button" class="btn btn-secondary btn-sm"
-                                                                    disabled>Pending</button>
-                                                                <button id="panggilButton" type="submit"
-                                                                    value="{{ $antrian->id }}" onclick="panggil(value)"
-                                                                    class="btn btn-info btn-sm">Panggil</button>
-                                                            </div>
-                                                        </td>
-                                                    @endif
-                                                    @if ($antrian->status === 'proses')
-                                                        <td>
-                                                            <div class="btn btn-warning btn-sm">Proses</div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="d-flex column-gap-1">
-                                                                <button type="button" class="btn btn-primary btn-sm"
-                                                                    disabled>Mulai</button>
-                                                                <form
-                                                                    action="/dashboard/antrian/{{ $antrian->id }}/menunggu"
-                                                                    method="post">
-                                                                    @method('put')
-                                                                    @csrf
-                                                                    <button
-                                                                        class="btn btn-secondary btn-sm">Pending</button>
-                                                                </form>
-                                                            </div>
-                                                        </td>
-                                                    @endif
-                                                    @if ($antrian->status === 'selesai')
-                                                        <td>
-                                                            <div class="btn btn-success btn-sm">Selesai</div>
-                                                        </td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-primary btn-sm"
-                                                                disabled>Mulai</button>
-                                                            <button type="button" class="btn btn-secondary btn-sm"
-                                                                disabled>Pending</button>
-                                                        </td>
-                                                    @endif
-                                                @endif
-                                            @else
-                                                @if ($antrian->keperluan === 'konsultasi')
-                                                    @if ($antrian->status === 'menunggu')
-                                                        <td>
-                                                            <div class="btn btn-danger btn-sm">Menunggu</div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="d-flex column-gap-1">
-                                                                <form
-                                                                    action="/dashboard/antrian/{{ $antrian->id }}/proses"
-                                                                    method="post">
-                                                                    @method('put')
-                                                                    @csrf
-                                                                    <button class="btn btn-primary btn-sm">Mulai</button>
-                                                                </form>
-                                                                <button type="button" class="btn btn-secondary btn-sm"
-                                                                    disabled>Pending</button>
-                                                                <button id="panggilButton" type="submit"
-                                                                    value="{{ $antrian->id }}" onclick="panggil(value)"
-                                                                    class="btn btn-info btn-sm">Panggil</button>
-                                                                <button id="ingatkanButton" type="submit"
-                                                                    value="{{ $antrian->staff }}" onclick="ingatkan(value)"
-                                                                    class="btn btn-info btn-sm">Ingatkan</button>
-                                                            </div>
-                                                        </td>
-                                                    @endif
-                                                    @if ($antrian->status === 'proses')
-                                                        <td>
-                                                            <div class="btn btn-warning btn-sm">Proses</div>
-                                                        </td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-primary btn-sm"
-                                                                disabled>Mulai</button>
-                                                            <button type="button"
-                                                                class="btn btn-secondary btn-sm">Pending</button>
-                                                        </td>
-                                                    @endif
-                                                    @if ($antrian->status === 'selesai')
-                                                        <td>
-                                                            <div class="btn btn-success btn-sm">Selesai</div>
-                                                        </td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-primary btn-sm"
-                                                                disabled>Mulai</button>
-                                                            <button type="button" class="btn btn-secondary btn-sm"
-                                                                disabled>Pending</button>
-                                                        </td>
-                                                    @endif
-                                                @else
-                                                    @if ($antrian->status === 'menunggu')
-                                                        <td>
-                                                            <div class="btn btn-danger btn-sm">Menunggu</div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="d-flex column-gap-1">
-                                                                <form
-                                                                    action="/dashboard/antrian/{{ $antrian->id }}/proses"
-                                                                    method="post">
-                                                                    @method('put')
-                                                                    @csrf
-                                                                    <button class="btn btn-primary btn-sm">Mulai</button>
-                                                                </form>
-                                                                <button type="button" class="btn btn-secondary btn-sm"
-                                                                    disabled>Pending</button>
-                                                                <button id="panggilButton" type="submit"
-                                                                    value="{{ $antrian->id }}" onclick="panggil(value)"
-                                                                    class="btn btn-info btn-sm">Panggil</button>
-                                                            </div>
-                                                        </td>
-                                                    @endif
-                                                    @if ($antrian->status === 'proses')
-                                                        <td>
-                                                            <div class="btn btn-warning btn-sm">Proses</div>
-                                                        </td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-primary btn-sm"
-                                                                disabled>Mulai</button>
-                                                            <button type="button"
-                                                                class="btn btn-secondary btn-sm">Pending</button>
-                                                        </td>
-                                                    @endif
-                                                    @if ($antrian->status === 'selesai')
-                                                        <td>
-                                                            <div class="btn btn-success btn-sm">Selesai</div>
-                                                        </td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-primary btn-sm"
-                                                                disabled>Mulai</button>
-                                                            <button type="button" class="btn btn-secondary btn-sm"
-                                                                disabled>Pending</button>
-                                                        </td>
-                                                    @endif
-                                                @endif
-                                            @endif
+                                            <td>{{ $selesai->nomorAntrian }}</td>
+                                            <td>
+                                                <div class="btn btn-success btn-sm">Selesai</div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex column-gap-1 row-gap-1">
+                                                    <button type="button" class="btn btn-primary btn-sm"
+                                                        disabled>Mulai</button>
+                                                    <button type="button" class="btn btn-secondary btn-sm"
+                                                        disabled>Pending</button>
+                                                </div>
+                                            </td>
                                         </tr>
+                                    @endforeach
+
+                                    @foreach ($dataAntrian as $antrian)
+                                        @if ($antrian->status !== 'selesai')
+                                            <tr>
+                                                <td>{{ $antrian->name }}</td>
+                                                <td>{{ $antrian->asal }}</td>
+                                                <td>{{ $antrian->keperluan }}</td>
+                                                @if ($antrian->keperluan === 'konsultasi')
+                                                    <td>{{ $antrian->staff }}</td>
+                                                @else
+                                                    <td>-</td>
+                                                @endif
+                                                <td>{{ $antrian->nomorAntrian }}</td>
+                                                @if ($antrianProses)
+                                                    @if ($antrian->keperluan === 'konsultasi')
+                                                        @if ($antrian->status === 'menunggu')
+                                                            <td>
+                                                                <div class="btn btn-danger btn-sm">Menunggu</div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex column-gap-1">
+                                                                    <button type="button" class="btn btn-primary btn-sm"
+                                                                        disabled>Mulai</button>
+                                                                    <button type="button" class="btn btn-secondary btn-sm"
+                                                                        disabled>Pending</button>
+                                                                    <button id="panggilButton" type="submit"
+                                                                        value="{{ $antrian->id }}"
+                                                                        onclick="panggil(value)"
+                                                                        class="btn btn-info btn-sm">Panggil</button>
+                                                                    <button id="ingatkanButton" type="submit"
+                                                                        value="{{ $antrian->staff }}"
+                                                                        onclick="ingatkan(value)"
+                                                                        class="btn btn-info btn-sm">Ingatkan</button>
+                                                                </div>
+                                                            </td>
+                                                        @endif
+                                                        @if ($antrian->status === 'proses')
+                                                            <td>
+                                                                <div class="btn btn-warning btn-sm">Proses</div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex column-gap-1">
+                                                                    <button type="button" class="btn btn-primary btn-sm"
+                                                                        disabled>Mulai</button>
+                                                                    <form
+                                                                        action="/dashboard/antrian/{{ $antrian->id }}/menunggu"
+                                                                        method="post">
+                                                                        @method('put')
+                                                                        @csrf
+                                                                        <button
+                                                                            class="btn btn-secondary btn-sm">Pending</button>
+                                                                    </form>
+                                                                </div>
+                                                            </td>
+                                                        @endif
+                                                        @if ($antrian->status === 'selesai')
+                                                            <td>
+                                                                <div class="btn btn-success btn-sm">Selesai</div>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-primary btn-sm"
+                                                                    disabled>Mulai</button>
+                                                                <button type="button" class="btn btn-secondary btn-sm"
+                                                                    disabled>Pending</button>
+                                                            </td>
+                                                        @endif
+                                                    @else
+                                                        @if ($antrian->status === 'menunggu')
+                                                            <td>
+                                                                <div class="btn btn-danger btn-sm">Menunggu</div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex column-gap-1">
+                                                                    <button type="button" class="btn btn-primary btn-sm"
+                                                                        disabled>Mulai</button>
+                                                                    <button type="button" class="btn btn-secondary btn-sm"
+                                                                        disabled>Pending</button>
+                                                                    <button id="panggilButton" type="submit"
+                                                                        value="{{ $antrian->id }}"
+                                                                        onclick="panggil(value)"
+                                                                        class="btn btn-info btn-sm">Panggil</button>
+                                                                </div>
+                                                            </td>
+                                                        @endif
+                                                        @if ($antrian->status === 'proses')
+                                                            <td>
+                                                                <div class="btn btn-warning btn-sm">Proses</div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex column-gap-1">
+                                                                    <button type="button" class="btn btn-primary btn-sm"
+                                                                        disabled>Mulai</button>
+                                                                    <form
+                                                                        action="/dashboard/antrian/{{ $antrian->id }}/menunggu"
+                                                                        method="post">
+                                                                        @method('put')
+                                                                        @csrf
+                                                                        <button
+                                                                            class="btn btn-secondary btn-sm">Pending</button>
+                                                                    </form>
+                                                                </div>
+                                                            </td>
+                                                        @endif
+                                                        @if ($antrian->status === 'selesai')
+                                                            <td>
+                                                                <div class="btn btn-success btn-sm">Selesai</div>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-primary btn-sm"
+                                                                    disabled>Mulai</button>
+                                                                <button type="button" class="btn btn-secondary btn-sm"
+                                                                    disabled>Pending</button>
+                                                            </td>
+                                                        @endif
+                                                    @endif
+                                                @else
+                                                    @if ($antrian->keperluan === 'konsultasi')
+                                                        @if ($antrian->status === 'menunggu')
+                                                            <td>
+                                                                <div class="btn btn-danger btn-sm">Menunggu</div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex column-gap-1">
+                                                                    <form
+                                                                        action="/dashboard/antrian/{{ $antrian->id }}/proses"
+                                                                        method="post">
+                                                                        @method('put')
+                                                                        @csrf
+                                                                        <button
+                                                                            class="btn btn-primary btn-sm">Mulai</button>
+                                                                    </form>
+                                                                    <button type="button" class="btn btn-secondary btn-sm"
+                                                                        disabled>Pending</button>
+                                                                    <button id="panggilButton" type="submit"
+                                                                        value="{{ $antrian->id }}"
+                                                                        onclick="panggil(value)"
+                                                                        class="btn btn-info btn-sm">Panggil</button>
+                                                                    <button id="ingatkanButton" type="submit"
+                                                                        value="{{ $antrian->staff }}"
+                                                                        onclick="ingatkan(value)"
+                                                                        class="btn btn-info btn-sm">Ingatkan</button>
+                                                                </div>
+                                                            </td>
+                                                        @endif
+                                                        @if ($antrian->status === 'proses')
+                                                            <td>
+                                                                <div class="btn btn-warning btn-sm">Proses</div>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-primary btn-sm"
+                                                                    disabled>Mulai</button>
+                                                                <button type="button"
+                                                                    class="btn btn-secondary btn-sm">Pending</button>
+                                                            </td>
+                                                        @endif
+                                                        @if ($antrian->status === 'selesai')
+                                                            <td>
+                                                                <div class="btn btn-success btn-sm">Selesai</div>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-primary btn-sm"
+                                                                    disabled>Mulai</button>
+                                                                <button type="button" class="btn btn-secondary btn-sm"
+                                                                    disabled>Pending</button>
+                                                            </td>
+                                                        @endif
+                                                    @else
+                                                        @if ($antrian->status === 'menunggu')
+                                                            <td>
+                                                                <div class="btn btn-danger btn-sm">Menunggu</div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex column-gap-1">
+                                                                    <form
+                                                                        action="/dashboard/antrian/{{ $antrian->id }}/proses"
+                                                                        method="post">
+                                                                        @method('put')
+                                                                        @csrf
+                                                                        <button
+                                                                            class="btn btn-primary btn-sm">Mulai</button>
+                                                                    </form>
+                                                                    <button type="button"
+                                                                        class="btn btn-secondary btn-sm"
+                                                                        disabled>Pending</button>
+                                                                    <button id="panggilButton" type="submit"
+                                                                        value="{{ $antrian->id }}"
+                                                                        onclick="panggil(value)"
+                                                                        class="btn btn-info btn-sm">Panggil</button>
+                                                                </div>
+                                                            </td>
+                                                        @endif
+                                                        @if ($antrian->status === 'proses')
+                                                            <td>
+                                                                <div class="btn btn-warning btn-sm">Proses</div>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-primary btn-sm"
+                                                                    disabled>Mulai</button>
+                                                                <button type="button"
+                                                                    class="btn btn-secondary btn-sm">Pending</button>
+                                                            </td>
+                                                        @endif
+                                                        @if ($antrian->status === 'selesai')
+                                                            <td>
+                                                                <div class="btn btn-success btn-sm">Selesai</div>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-primary btn-sm"
+                                                                    disabled>Mulai</button>
+                                                                <button type="button" class="btn btn-secondary btn-sm"
+                                                                    disabled>Pending</button>
+                                                            </td>
+                                                        @endif
+                                                    @endif
+                                                @endif
+                                            </tr>
+                                        @endif
                                     @endforeach
                                 </tbody>
                             </table>

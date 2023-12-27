@@ -12,7 +12,8 @@ class AntrianController extends Controller
         return view('dashboard.antrian', [
             'title' => 'Antrian',
             'dataAntrian' => Antrian::all(),
-            'antrianProses' => Antrian::firstWhere('status', 'proses')
+            'antrianProses' => Antrian::firstWhere('status', 'proses'),
+            'antrianSelesai' => Antrian::orderBy('nomorAntrian', 'asc')->where('status', 'selesai')->get()
         ]);
     }
 

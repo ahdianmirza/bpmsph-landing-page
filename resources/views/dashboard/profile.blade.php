@@ -55,10 +55,10 @@
                                         Profile</button>
                                 </li>
 
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <button class="nav-link" data-bs-toggle="tab"
                                         data-bs-target="#profile-change-password">Change Password</button>
-                                </li>
+                                </li> --}}
 
                             </ul>
                             <div class="tab-content pt-2">
@@ -179,7 +179,7 @@
 
                                 </div>
 
-                                <div class="tab-pane fade pt-3" id="profile-change-password">
+                                {{-- <div class="tab-pane fade pt-3" id="profile-change-password">
                                     <!-- Change Password Form -->
                                     <form action="" method="post">
                                         <div class="row mb-3">
@@ -214,7 +214,7 @@
                                         </div>
                                     </form><!-- End Change Password Form -->
 
-                                </div>
+                                </div> --}}
 
                             </div><!-- End Bordered Tabs -->
 

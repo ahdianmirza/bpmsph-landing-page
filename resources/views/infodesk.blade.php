@@ -590,28 +590,26 @@
 
                                 </div>
 
-                                <div class="col-lg-8">
-                                    <form action="forms/contact.php" method="post" role="form"
-                                        class="php-email-form">
+                                <div class="col-lg-8 p-4">
+                                    <form action="/pesan" method="post" name="infodeskForm">
+                                        @csrf
                                         <div class="row">
                                             <div class="col-md-6 form-group">
                                                 <input type="text" name="name" class="form-control" id="name"
-                                                    placeholder="Nama" required>
+                                                    placeholder="Masukkan nama" onkeyup="handleButtonDisabled()" required>
                                             </div>
                                             <div class="col-md-6 form-group mt-3 mt-md-0">
                                                 <input type="email" class="form-control" name="email" id="email"
-                                                    placeholder="E-mail" required>
+                                                    placeholder="Masukkan E-mail" onkeyup="handleButtonDisabled()"
+                                                    required>
                                             </div>
                                         </div>
                                         <div class="form-group mt-3">
-                                            <textarea class="form-control" name="message" rows="7" placeholder="Pesan" required></textarea>
+                                            <textarea class="form-control" name="pesan" id="pesan" rows="7" placeholder="Masukkan pesan"
+                                                onkeyup="handleButtonDisabled()" required></textarea>
                                         </div>
-                                        <div class="my-3">
-                                            <div class="loading">Loading</div>
-                                            <div class="error-message"></div>
-                                            <div class="sent-message">Pesan mu sudah dikirim. Terima Kasih!</div>
-                                        </div>
-                                        <div class="text-center"><button type="submit">Kirim Pesan</button></div>
+                                        <button type="submit" id="buttonSubmit" class="btn btn-primary mt-3"
+                                            style="width: 100%" value="kirim" disabled="disabled">Kirim</button>
                                     </form>
                                 </div><!-- End Contact Form -->
 
@@ -650,6 +648,24 @@
             ajax.send(JSON.stringify({
                 posisi: "sample"
             }));
+        }
+
+        const handleButtonDisabled = () => {
+            let infodeskForm = document.forms['infodeskForm'].elements;
+            const buttonSubmit = document.getElementById("buttonSubmit");
+            let fieldMustBeFilledInfodesk = true;
+
+            for (let i = 0; i < infodeskForm.length; i++) {
+                if (infodeskForm[i].value.length == 0) {
+                    fieldMustBeFilledInfodesk = false;
+                }
+            }
+
+            if (fieldMustBeFilledInfodesk) {
+                document.getElementById("buttonSubmit").disabled = false;
+            } else {
+                document.getElementById("buttonSubmit").disabled = true;
+            }
         }
     </script>
 @endsection

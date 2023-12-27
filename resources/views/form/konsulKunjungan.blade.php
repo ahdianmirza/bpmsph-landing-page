@@ -260,8 +260,6 @@
                 }
             }
 
-            console.info(fieldMustBeFilled);
-
             if (fieldMustBeFilled) {
                 document.getElementById("submitButton").disabled = false;
             } else {

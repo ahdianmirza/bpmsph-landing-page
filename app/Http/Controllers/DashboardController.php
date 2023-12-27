@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\DataPegawai;
 use App\Models\KonsulKunjungan;
+use App\Models\Notifikasi;
 use App\Models\Sampleuji;
 use App\Models\Ulasan;
 use Illuminate\Http\Request;
@@ -14,20 +15,33 @@ class DashboardController extends Controller
 {
     public function dashboard() {
         return view('dashboard.dashboard', [
-            'title' => 'Dashboard'
+            'title' => 'Dashboard',
+            'dataNotifikasiUnchecked' => Notifikasi::where('checked', 0)->get(),
+            'dataNotifikasi' => Notifikasi::latest()->get()
         ]);
+    }
+
+    public function notifCheckedAll() {
+        Notifikasi::where('checked', 0)->update([
+            'checked' => 1
+        ]);
+        return back();
     }
 
     public function dataPegawai() {
         return view('dashboard.dataPegawai.dataPegawai', [
             'title' => 'Data Pegawai',
-            'pegawais' => DataPegawai::all()
+            'pegawais' => DataPegawai::all(),
+            'dataNotifikasiUnchecked' => Notifikasi::where('checked', 0)->get(),
+            'dataNotifikasi' => Notifikasi::latest()->get()
         ]);
     }
 
     public function dataPegawaiCreate() {
         return view('dashboard.dataPegawai.createDataPegawai', [
-            'title' => 'Tambah Data Pegawai'
+            'title' => 'Tambah Data Pegawai',
+            'dataNotifikasiUnchecked' => Notifikasi::where('checked', 0)->get(),
+            'dataNotifikasi' => Notifikasi::latest()->get()
         ]);
     }
 
@@ -51,34 +65,44 @@ class DashboardController extends Controller
 
     public function dataSuhuPengunjung() {
         return view('dashboard.tablesSuhuPengunjung', [
-            'title' => 'Data Suhu Pengunjung'
+            'title' => 'Data Suhu Pengunjung',
+            'dataNotifikasiUnchecked' => Notifikasi::where('checked', 0)->get(),
+            'dataNotifikasi' => Notifikasi::latest()->get()
         ]);
     }
 
     public function tablesUjiSample() {
         return view('dashboard.tablesUjiSample', [
             'title' => 'Data Pengantaran Sample',
-            'samples' => Sampleuji::all()
+            'samples' => Sampleuji::all(),
+            'dataNotifikasiUnchecked' => Notifikasi::where('checked', 0)->get(),
+            'dataNotifikasi' => Notifikasi::latest()->get()
         ]);
     }
 
     public function tablesKonsulKunjungan() {
         return view('dashboard.tablesKonsulKunjungan', [
             'title' => 'Data Konsultasi / Kunjungan',
-            'konsuls' => KonsulKunjungan::all()
+            'konsuls' => KonsulKunjungan::all(),
+            'dataNotifikasiUnchecked' => Notifikasi::where('checked', 0)->get(),
+            'dataNotifikasi' => Notifikasi::latest()->get()
         ]);
     }
 
     public function tablesUlasan() {
         return view('dashboard.tablesUlasan', [
             'title' => 'Data Ulasan',
-            'ulasans' => Ulasan::all()
+            'ulasans' => Ulasan::all(),
+            'dataNotifikasiUnchecked' => Notifikasi::where('checked', 0)->get(),
+            'dataNotifikasi' => Notifikasi::latest()->get()
         ]);
     }
 
     public function profile() {
         return view('dashboard.profile', [
-            'title' => 'My Profile'
+            'title' => 'My Profile',
+            'dataNotifikasiUnchecked' => Notifikasi::where('checked', 0)->get(),
+            'dataNotifikasi' => Notifikasi::latest()->get()
         ]);
     }
 
@@ -94,5 +118,13 @@ class DashboardController extends Controller
                 ->update($validatedData);
         
         return redirect('/dashboard/profile')->with('success', 'Profile has beed updated!'); 
+    }
+
+    public function notifikasiIndex() {
+        return view('dashboard.notifikasi', [
+            'title' => 'Notifikasi',
+            'dataNotifikasiUnchecked' => Notifikasi::where('checked', 0)->get(),
+            'dataNotifikasi' => Notifikasi::latest()->get()
+        ]);
     }
 }

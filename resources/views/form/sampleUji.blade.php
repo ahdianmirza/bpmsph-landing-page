@@ -254,8 +254,6 @@
                 }
             }
 
-            console.info(fieldMustBeFilledSample);
-
             if (fieldMustBeFilledSample) {
                 submitButtonSample.disabled = false;
             } else {

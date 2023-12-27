@@ -9,91 +9,72 @@
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
-    <div class="search-bar">
+    {{-- <div class="search-bar">
         <form class="search-form d-flex align-items-center" method="POST" action="#">
             <input type="text" name="query" placeholder="Search" title="Enter search keyword">
             <button type="submit" title="Search"><i class="bi bi-search"></i></button>
         </form>
-    </div><!-- End Search Bar -->
+    </div><!-- End Search Bar --> --}}
 
     <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
 
-            <li class="nav-item d-block d-lg-none">
+            {{-- <li class="nav-item d-block d-lg-none">
                 <a class="nav-link nav-icon search-bar-toggle " href="#">
                     <i class="bi bi-search"></i>
                 </a>
-            </li><!-- End Search Icon-->
+            </li><!-- End Search Icon--> --}}
 
             <li class="nav-item dropdown">
 
-                <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                <button class="nav-link nav-icon" data-bs-toggle="dropdown">
                     <i class="bi bi-bell"></i>
-                    <span class="badge bg-primary badge-number">4</span>
-                </a><!-- End Notification Icon -->
+                    @if (count($dataNotifikasiUnchecked) > 0)
+                        <span class="badge bg-primary badge-number">{{ count($dataNotifikasiUnchecked) }}</span>
+                    @endif
+                </button><!-- End Notification Icon -->
 
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-                    <li class="dropdown-header">
-                        You have 4 new notifications
-                        <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications overflow-auto">
+                    <li class="dropdown-header d-flex align-items-center">
+                        @if (count($dataNotifikasiUnchecked) > 0)
+                            You have {{ count($dataNotifikasiUnchecked) }} new notifications
+                            <form action="/notif/checked" action="post">
+                                @method('put')
+                                @csrf
+                                <button class="btn badge rounded-pill bg-primary p-2 ms-2"><span>View
+                                        all</span></button>
+                            </form>
+                        @else
+                            You don't have new notification
+                        @endif
                     </li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
 
-                    <li class="notification-item">
-                        <i class="bi bi-exclamation-circle text-warning"></i>
-                        <div>
-                            <h4>Lorem Ipsum</h4>
-                            <p>Quae dolorem earum veritatis oditseno</p>
-                            <p>30 min. ago</p>
-                        </div>
-                    </li>
+                    @if ($dataNotifikasiUnchecked)
+                        @foreach ($dataNotifikasiUnchecked as $notif)
+                            <li class="notification-item">
+                                @if ($notif->checked === 0)
+                                    <i class="bi bi-exclamation-circle text-primary"></i>
+                                @else
+                                    <i class="bi bi-check-circle text-success"></i>
+                                @endif
 
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
+                                <div>
+                                    <h4>{{ $notif->name }}</h4>
+                                    <p>{{ $notif->pesan }}</p>
+                                    <p>{{ $notif->created_at->diffForHumans() }}</p>
+                                </div>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                        @endforeach
+                    @endif
 
-                    <li class="notification-item">
-                        <i class="bi bi-x-circle text-danger"></i>
-                        <div>
-                            <h4>Atque rerum nesciunt</h4>
-                            <p>Quae dolorem earum veritatis oditseno</p>
-                            <p>1 hr. ago</p>
-                        </div>
-                    </li>
-
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-
-                    <li class="notification-item">
-                        <i class="bi bi-check-circle text-success"></i>
-                        <div>
-                            <h4>Sit rerum fuga</h4>
-                            <p>Quae dolorem earum veritatis oditseno</p>
-                            <p>2 hrs. ago</p>
-                        </div>
-                    </li>
-
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-
-                    <li class="notification-item">
-                        <i class="bi bi-info-circle text-primary"></i>
-                        <div>
-                            <h4>Dicta reprehenderit</h4>
-                            <p>Quae dolorem earum veritatis oditseno</p>
-                            <p>4 hrs. ago</p>
-                        </div>
-                    </li>
-
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
                     <li class="dropdown-footer">
-                        <a href="#">Show all notifications</a>
+                        <a href="/dashboard/notifikasi">Show all notifications</a>
                     </li>
 
                 </ul><!-- End Notification Dropdown Items -->

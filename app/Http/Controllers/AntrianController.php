@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Antrian;
+use App\Models\Notifikasi;
 use Illuminate\Http\Request;
 
 class AntrianController extends Controller
@@ -13,7 +14,9 @@ class AntrianController extends Controller
             'title' => 'Antrian',
             'dataAntrian' => Antrian::all(),
             'antrianProses' => Antrian::firstWhere('status', 'proses'),
-            'antrianSelesai' => Antrian::orderBy('nomorAntrian', 'asc')->where('status', 'selesai')->get()
+            'antrianSelesai' => Antrian::orderBy('nomorAntrian', 'asc')->where('status', 'selesai')->get(),
+            'dataNotifikasiUnchecked' => Notifikasi::where('checked', 0)->get(),
+            'dataNotifikasi' => Notifikasi::latest()->get()
         ]);
     }
 

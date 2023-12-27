@@ -28,6 +28,8 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
+Route::get('/notif/checked', [DashboardController::class, 'notifCheckedAll'])->middleware('auth');
+
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('auth');
 
 Route::get('/dashboard/data-pegawai', [DashboardController::class, 'dataPegawai'])->middleware('auth');
@@ -47,10 +49,13 @@ Route::get('/dashboard/tables-konsultasi-kunjungan', [DashboardController::class
 Route::get('/dashboard/tables-sample-uji', [DashboardController::class, 'tablesUjiSample'])->middleware('auth');
 Route::get('/dashboard/tables-ulasan', [DashboardController::class, 'tablesUlasan'])->middleware('auth');
 
+Route::get('/dashboard/notifikasi', [DashboardController::class, 'notifikasiIndex'])->middleware('auth');
+
 Route::get('/dashboard/profile', [DashboardController::class, 'profile'])->middleware('auth');
 Route::put('/dashboard/profile/{user_id}', [DashboardController::class, 'updateProfile'])->middleware('auth');
 
 Route::get('/', [InfodeskController::class, 'index']);
+Route::post('/pesan', [InfodeskController::class, 'pesanStore']);
 
 Route::get('/konsultasi-kunjungan', [FormController::class, 'konsulKunjungan']);
 Route::post('/konsultasi-kunjungan', [FormController::class, 'konsulKunjunganStore']);

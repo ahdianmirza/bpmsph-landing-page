@@ -127,13 +127,13 @@
         </section><!-- End About Us Section -->
 
         <!-- ======= Mitra Section ======= -->
-        <section id="about" class="about">
+        <section id="mitra" class="about">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
                     <h2>Mitra</h2>
 
-                    <section id="mitra" class="clients">
+                    <section class="clients">
                         <div class="container" data-aos="zoom-out">
                             <div class="clients-slider swiper">
                                 <div class="swiper-wrapper align-items-center">
@@ -163,463 +163,446 @@
                             </div>
                         </div>
                     </section><!-- End Mitra Section -->
-
-                    <!-- ======= Client Section ======= -->
-                    <section id="Client" class="stats-counter">
-                        <div class="container" data-aos="fade-up">
-
-                            <div class="section-header">
-                                <h2>Client</h2>
-
-                                <div class="row gy-4 align-items-center">
-
-                                    <div class="col-lg-6">
-                                        <img src="assets/img/stats-img.svg" alt="" class="img-fluid">
-                                    </div>
-
-                                    <div class="col-lg-6">
-
-                                        <div class="stats-item d-flex align-items-center">
-                                            <span data-purecounter-start="0" data-purecounter-end="600"
-                                                data-purecounter-duration="1" class="purecounter"></span>
-                                            <p><strong> More Happy Clients</strong></p>
-                                        </div><!-- End Stats Item -->
-
-                                        <div class="stats-item d-flex align-items-center">
-                                            <span data-purecounter-start="0" data-purecounter-end="521"
-                                                data-purecounter-duration="1" class="purecounter"></span>
-                                            <p><strong>Projects</strong></p>
-                                        </div><!-- End Stats Item -->
-
-                                        <div class="stats-item d-flex align-items-center">
-                                            <span data-purecounter-start="0" data-purecounter-end="27"
-                                                data-purecounter-duration="1" class="purecounter"></span>
-                                            <p><strong>+ Years Of Support</strong></p>
-                                        </div><!-- End Stats Item -->
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </section><!-- End Client Section -->
-
-                    <!-- ======= K3 Section ======= -->
-                    <section id="k3" class="call-to-action">
-                        <div class="container text-center" data-aos="zoom-out">
-                            <a href="https://www.youtube.com/watch?v=YSUNbB-C2c0" class="glightbox play-btn"></a>
-                            <h3>Safety Induction</h3>
-                            <p> Video berikut bertujuan untuk memberikan pemahaman singkat dan efektif kepada para
-                                pembaca mengenai langkah-langkah keselamatan yang perlu diikuti ketika berada di
-                                lingkungan kerja. </p>
-                            <a class="cta-btn" href="https://www.youtube.com/watch?v=YSUNbB-C2c0">Safety Induction</a>
-                        </div>
-                    </section><!-- End K3 Section -->
-
-                    <!-- ======= Testimonials Section ======= -->
-                    <section id="testimonials" class="testimonials">
-                        <div class="container" data-aos="fade-up">
-
-                            <div class="section-header">
-                                <h2>Testimoni</h2>
-                                <p>Lebih dari 669 client yang percaya dan yakin dengan hasil Uji Produk mereka di
-                                    BPMSPH.</p>
-                            </div>
-
-                            <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
-                                <div class="swiper-wrapper">
-
-                                    <div class="swiper-slide">
-                                        <div class="testimonial-wrap">
-                                            <div class="testimonial-item">
-                                                <div class="d-flex align-items-center">
-                                                    <img src="assets/img/testimonials/CHIKA.jpg"
-                                                        class="testimonial-img flex-shrink-0" alt="">
-                                                    <div>
-                                                        <h3>Chika Desvi</h3>
-                                                        <h4>Mahasiswa</h4>
-                                                        <div class="stars">
-                                                            <i class="bi bi-star-fill"></i><i
-                                                                class="bi bi-star-fill"></i><i
-                                                                class="bi bi-star-fill"></i><i
-                                                                class="bi bi-star-fill"></i><i
-                                                                class="bi bi-star-fill"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <p>
-                                                    <i class="bi bi-quote quote-icon-left"></i>
-                                                    ....
-                                                    <i class="bi bi-quote quote-icon-right"></i>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div><!-- End testimonial item -->
-
-                                    <div class="swiper-slide">
-                                        <div class="testimonial-wrap">
-                                            <div class="testimonial-item">
-                                                <div class="d-flex align-items-center">
-                                                    <img src="assets/img/testimonials/testimonials-2.jpg"
-                                                        class="testimonial-img flex-shrink-0" alt="">
-                                                    <div>
-                                                        <h3>...</h3>
-                                                        <h4>..</h4>
-                                                        <div class="stars">
-                                                            <i class="bi bi-star-fill"></i><i
-                                                                class="bi bi-star-fill"></i><i
-                                                                class="bi bi-star-fill"></i><i
-                                                                class="bi bi-star-fill"></i><i
-                                                                class="bi bi-star-fill"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <p>
-                                                    <i class="bi bi-quote quote-icon-left"></i>
-                                                    ...
-                                                    <i class="bi bi-quote quote-icon-right"></i>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div><!-- End testimonial item -->
-
-                                    <div class="swiper-slide">
-                                        <div class="testimonial-wrap">
-                                            <div class="testimonial-item">
-                                                <div class="d-flex align-items-center">
-                                                    <img src="assets/img/testimonials/testimonials-3.jpg"
-                                                        class="testimonial-img flex-shrink-0" alt="">
-                                                    <div>
-                                                        <h3>..</h3>
-                                                        <h4>..</h4>
-                                                        <div class="stars">
-                                                            <i class="bi bi-star-fill"></i><i
-                                                                class="bi bi-star-fill"></i><i
-                                                                class="bi bi-star-fill"></i><i
-                                                                class="bi bi-star-fill"></i><i
-                                                                class="bi bi-star-fill"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <p>
-                                                    <i class="bi bi-quote quote-icon-left"></i>
-                                                    ..
-                                                    <i class="bi bi-quote quote-icon-right"></i>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div><!-- End testimonial item -->
-
-                                    <div class="swiper-slide">
-                                        <div class="testimonial-wrap">
-                                            <div class="testimonial-item">
-                                                <div class="d-flex align-items-center">
-                                                    <img src="assets/img/testimonials/testimonials-4.jpg"
-                                                        class="testimonial-img flex-shrink-0" alt="">
-                                                    <div>
-                                                        <h3>..</h3>
-                                                        <h4>..</h4>
-                                                        <div class="stars">
-                                                            <i class="bi bi-star-fill"></i><i
-                                                                class="bi bi-star-fill"></i><i
-                                                                class="bi bi-star-fill"></i><i
-                                                                class="bi bi-star-fill"></i><i
-                                                                class="bi bi-star-fill"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <p>
-                                                    <i class="bi bi-quote quote-icon-left"></i>
-                                                    ..
-                                                    <i class="bi bi-quote quote-icon-right"></i>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div><!-- End testimonial item -->
-
-                                    <div class="swiper-slide">
-                                        <div class="testimonial-wrap">
-                                            <div class="testimonial-item">
-                                                <div class="d-flex align-items-center">
-                                                    <img src="assets/img/testimonials/testimonials-5.jpg"
-                                                        class="testimonial-img flex-shrink-0" alt="">
-                                                    <div>
-                                                        <h3>..</h3>
-                                                        <h4>..</h4>
-                                                        <div class="stars">
-                                                            <i class="bi bi-star-fill"></i><i
-                                                                class="bi bi-star-fill"></i><i
-                                                                class="bi bi-star-fill"></i><i
-                                                                class="bi bi-star-fill"></i><i
-                                                                class="bi bi-star-fill"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <p>
-                                                    <i class="bi bi-quote quote-icon-left"></i>
-                                                    ..
-                                                    <i class="bi bi-quote quote-icon-right"></i>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div><!-- End testimonial item -->
-
-                                </div>
-                                <div class="swiper-pagination"></div>
-                            </div>
-
-                        </div>
-                    </section><!-- End Testimonials Section -->
-
-                    <!-- ======= Team Manajer Section ======= -->
-                    <section id="team" class="team">
-                        <div class="container" data-aos="fade-up">
-
-                            <div class="section-header">
-                                <h2>Manajemen BPMSPH</h2>
-                            </div>
-
-                            <div class="row gy-5">
-
-                                <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-                                    <div class="member">
-                                        <img src="assets/img/team/Imron.png" class="img-fluid" alt="">
-                                        <h4>drh. Imron Suandy, MP</h4>
-                                        <span><strong>PLT KEPALA BALAI</strong></span>
-                                        <a class="cta-btn" href="https://bpmsph.com/LHKPN%20Iwan%20Dz.pdf"><strong>LHKPN
-                                                2022</strong></a>
-                                    </div>
-                                </div><!-- End Team Member -->
-
-                                <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-                                    <div class="member">
-                                        <img src="assets/img/team/Anik.png" class="img-fluid" alt="">
-                                        <h4>drh. Rr Anik Winanningrum</h4>
-                                        <span><strong>KEPALA SUBBAGIAN TATA USAHA </strong> 19751221 200801 2 012</span>
-                                        <a class="cta-btn" href="https://bpmsph.com/LHKPN%20Anik%20W.pdf"><strong>LHKPN
-                                                2022</strong></a>
-                                    </div>
-                                </div><!-- End Team Member -->
-
-                                <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
-                                    <div class="member">
-                                        <img src="assets/img/team/Dian.png" class="img-fluid" alt="">
-                                        <h4>drh. Dian Cahyaningsari, M.Si</h4>
-                                        <span><strong>SUBKOORDINATOR PELAYANAN TEKNIS </strong> 19810921 200501 2 001
-                                        </span>
-                                        <a class="cta-btn" href="https://bpmsph.com/LHKPN%20Mas%20Ading.pdf"><strong>LHKPN
-                                                2022</strong></a>
-                                    </div>
-                                </div><!-- End Team Member -->
-
-                                <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
-                                    <div class="member">
-                                        <img src="assets/img/team/Wiwit.png" class="img-fluid" alt="">
-                                        <h4>drh. Wiwit Subiyanti</h4>
-                                        <span><strong>SUBKOORDINATOR PENYIAPAN SAMPEL </strong> 19810221 200801 2
-                                            010</span>
-                                        <a class="cta-btn"
-                                            href="https://bpmsph.com/LHKPN%20Angryani%20Chahyaningtyas.pdf"><strong>LHKPN
-                                                2022</strong></a>
-                                    </div>
-                                </div><!-- End Team Member -->
-
-                            </div>
-
-                        </div>
-                    </section><!-- End Team Manajer Section -->
-
-                    <!-- ======= Frequently Asked Questions Section ======= -->
-                    <section id="faq" class="faq">
-                        <div class="container" data-aos="fade-up">
-
-                            <div class="row gy-4">
-
-                                <div class="col-lg-4">
-                                    <div class="content px-xl-5">
-                                        <h3>Frequently Asked <strong>Questions</strong></h3>
-                                        <br>
-                                        <p><strong>Apa itu BPMSPH ?</strong></p>
-                                        <p class="justify">Balai Pengujian Mutu dan Sertifikasi Produk Hewan atau
-                                            disingkat BPMSPH merupakan Unit Pelaksana Teknis (UPT) Direktorat Jenderal
-                                            Peternakan dan Kesehatan Hewan, Kementerian Pertanian yang berada di bawah
-                                            dan bertanggung jawab kepada Direktur Jenderal Peternakan dan Kesehatan
-                                            Hewan, dan secara teknis dibina oleh Direktur Kesehatan Masyarakat Veteriner
-                                            dan Pascapanen.</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-8">
-
-                                    <div class="accordion accordion-flush" id="faqlist" data-aos="fade-up"
-                                        data-aos-delay="100">
-
-                                        <div class="accordion-item">
-                                            <h3 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#faq-content-1">
-                                                    <span class="num">1.</span>
-                                                    Sampel apa saja yang dapat diuji di BPMSPH?
-                                                </button>
-                                            </h3>
-                                            <div id="faq-content-1" class="accordion-collapse collapse"
-                                                data-bs-parent="#faqlist">
-                                                <div class="accordion-body">
-                                                    Balai Pengujian Mutu dan Sertifikasi Produk Hewan melakukan
-                                                    pengujian terhadap berbagai produk hewan meliputi Daging, Susu,
-                                                    Telur, dan produk hewan turunan lainnya.
-                                                </div>
-                                            </div>
-                                        </div><!-- # Faq item-->
-
-                                        <div class="accordion-item">
-                                            <h3 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#faq-content-2">
-                                                    <span class="num">2.</span>
-                                                    Berapa tarif untuk setiap sampel yang diuji di BPMSPH?
-                                                </button>
-                                            </h3>
-                                            <div id="faq-content-2" class="accordion-collapse collapse"
-                                                data-bs-parent="#faqlist">
-                                                <div class="accordion-body">
-                                                    Besaran Tarif Pengujian yang ditetapkan berbeda-beda tergantung
-                                                    parameter pengujian yang dilakukan. Detail tarif pengujian dapat
-                                                    dilihat disini.
-                                                </div>
-                                            </div>
-                                        </div><!-- # Faq item-->
-
-                                        <div class="accordion-item">
-                                            <h3 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#faq-content-3">
-                                                    <span class="num">3.</span>
-                                                    Layanan pengujian apa saja yang dilakukan di BPMSPH?
-                                                </button>
-                                            </h3>
-                                            <div id="faq-content-3" class="accordion-collapse collapse"
-                                                data-bs-parent="#faqlist">
-                                                <div class="accordion-body">
-                                                    Secara singkat, layanan uji yang dilakukan oleh Balai Pengujian Mutu
-                                                    dan Sertifikasi Produk Hewan meliputi pengujian terhadap Pengujian
-                                                    Cemaran Mikroba, Pengujian Laboratorium Bioassay, Pengujian
-                                                    Laboratorium Kimia. Selengkapnya bisa dicek disini.
-                                                </div>
-                                            </div>
-                                        </div><!-- # Faq item-->
-
-                                        <div class="accordion-item">
-                                            <h3 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#faq-content-4">
-                                                    <span class="num">4.</span>
-                                                    Bagaimana mekanisme pengambilan hasil pengujian oleh pengguna jasa?
-                                                </button>
-                                            </h3>
-                                            <div id="faq-content-4" class="accordion-collapse collapse"
-                                                data-bs-parent="#faqlist">
-                                                <div class="accordion-body">
-                                                    Hasil pengujian dapat diperoleh setelah pengguna jasa melakukan
-                                                    pembayaran dan memberikan bukti pembayaran. Pengambilan hasil
-                                                    pengujian dapat dilakukan dengan berbagai cara, antara lain :
-                                                    diambil langsung oleh pengguna jasa, melalui surat elektronik
-                                                    (e-mail), atau pengiriman melalui Pos.
-                                                </div>
-                                            </div>
-                                        </div><!-- # Faq item-->
-                                        <a href="https://bpmsph.com/niagaweb/faq/"
-                                            class="btn btn-primary">Selengkapnya</a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </section><!-- End Frequently Asked Questions Section -->
-
-                    <!-- ======= Contact Section ======= -->
-                    <section id="contact" class="contact">
-                        <div class="container" data-aos="fade-up">
-
-                            <div class="section-header">
-                                <h2>Contact</h2>
-                            </div>
-
-                            <div class="row gx-lg-0 gy-4">
-
-                                <div class="col-lg-4">
-
-                                    <div class="info-container">
-                                        <div class="info-item d-flex justify-content-center align-items-center">
-                                            <i class="bi bi-geo-alt flex-shrink-0"></i>
-                                            <div class="">
-                                                <h4>Location:</h4>
-                                                <p class="text-light">Jl. Pemuda No.29A, Kecamatan Tanah Sareal, Kota
-                                                    Bogor, Jawa Barat
-                                                    16161</p>
-                                            </div>
-                                        </div><!-- End Info Item -->
-
-                                        <div class="info-item">
-                                            <i class="bi bi-envelope flex-shrink-0"></i>
-                                            <div class="">
-                                                <h4>Email:</h4>
-                                                <p class="text-light">bpmsph@pertanian.go.id</p>
-                                            </div>
-                                        </div><!-- End Info Item -->
-
-                                        <div class="info-item">
-                                            <i class="bi bi-phone flex-shrink-0"></i>
-                                            <div>
-                                                <h4>Call:</h4>
-                                                <p class="text-light">+62 251 8353712</p>
-                                            </div>
-                                        </div><!-- End Info Item -->
-
-                                        <div class="info-item">
-                                            <i class="bi bi-clock flex-shrink-0"></i>
-                                            <div class="d-flex flex-column align-items-center justify-content-center">
-                                                <h4>Open Hours:</h4>
-                                                <p class="text-light">Mon-Thur: 7:30AM - 4PM</p>
-                                                <p class="text-light">Friday : 7:30AM - 4:30PM</p>
-                                            </div>
-                                        </div><!-- End Info Item -->
-                                    </div>
-
-                                </div>
-
-                                <div class="col-lg-8 p-4">
-                                    <form action="/pesan" method="post" name="infodeskForm">
-                                        @csrf
-                                        <div class="row">
-                                            <div class="col-md-6 form-group">
-                                                <input type="text" name="name" class="form-control" id="name"
-                                                    placeholder="Masukkan nama" onkeyup="handleButtonDisabled()" required>
-                                            </div>
-                                            <div class="col-md-6 form-group mt-3 mt-md-0">
-                                                <input type="email" class="form-control" name="email" id="email"
-                                                    placeholder="Masukkan E-mail" onkeyup="handleButtonDisabled()"
-                                                    required>
-                                            </div>
-                                        </div>
-                                        <div class="form-group mt-3">
-                                            <textarea class="form-control" name="pesan" id="pesan" rows="7" placeholder="Masukkan pesan"
-                                                onkeyup="handleButtonDisabled()" required></textarea>
-                                        </div>
-                                        <button type="submit" id="buttonSubmit" class="btn btn-primary mt-3"
-                                            style="width: 100%" value="kirim" disabled="disabled">Kirim</button>
-                                    </form>
-                                </div><!-- End Contact Form -->
-
-                            </div>
-
-                        </div>
-                    </section><!-- End Contact Section -->
                 </div>
             </div>
         </section>
+
+        <!-- ======= Client Section ======= -->
+        <section id="clients" class="stats-counter">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-header">
+                    <h2>Clients</h2>
+
+                    <div class="row gy-4 align-items-center">
+
+                        <div class="col-lg-6">
+                            <img src="assets/img/stats-img.svg" alt="" class="img-fluid">
+                        </div>
+
+                        <div class="col-lg-6">
+
+                            <div class="stats-item d-flex align-items-center">
+                                <span data-purecounter-start="0" data-purecounter-end="600" data-purecounter-duration="1"
+                                    class="purecounter"></span>
+                                <p><strong> More Happy Clients</strong></p>
+                            </div><!-- End Stats Item -->
+
+                            <div class="stats-item d-flex align-items-center">
+                                <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+                                    class="purecounter"></span>
+                                <p><strong>Projects</strong></p>
+                            </div><!-- End Stats Item -->
+
+                            <div class="stats-item d-flex align-items-center">
+                                <span data-purecounter-start="0" data-purecounter-end="27" data-purecounter-duration="1"
+                                    class="purecounter"></span>
+                                <p><strong>+ Years Of Support</strong></p>
+                            </div><!-- End Stats Item -->
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section><!-- End Client Section -->
+
+        <!-- ======= K3 Section ======= -->
+        <section id="k3" class="call-to-action">
+            <div class="container text-center" data-aos="zoom-out">
+                <a href="https://www.youtube.com/watch?v=YSUNbB-C2c0" class="glightbox play-btn"></a>
+                <h3>Safety Induction</h3>
+                <p> Video berikut bertujuan untuk memberikan pemahaman singkat dan efektif kepada para
+                    pembaca mengenai langkah-langkah keselamatan yang perlu diikuti ketika berada di
+                    lingkungan kerja. </p>
+                <a class="cta-btn" href="https://www.youtube.com/watch?v=YSUNbB-C2c0">Safety Induction</a>
+            </div>
+        </section><!-- End K3 Section -->
+
+        <!-- ======= Testimonials Section ======= -->
+        <section id="testimonials" class="testimonials">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-header">
+                    <h2>Testimoni</h2>
+                    <p>Lebih dari 669 client yang percaya dan yakin dengan hasil Uji Produk mereka di
+                        BPMSPH.</p>
+                </div>
+
+                <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-wrap">
+                                <div class="testimonial-item">
+                                    <div class="d-flex align-items-center">
+                                        <img src="assets/img/testimonials/CHIKA.jpg" class="testimonial-img flex-shrink-0"
+                                            alt="">
+                                        <div>
+                                            <h3>Chika Desvi</h3>
+                                            <h4>Mahasiswa</h4>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        <i class="bi bi-quote quote-icon-left"></i>
+                                        ....
+                                        <i class="bi bi-quote quote-icon-right"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div><!-- End testimonial item -->
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-wrap">
+                                <div class="testimonial-item">
+                                    <div class="d-flex align-items-center">
+                                        <img src="assets/img/testimonials/testimonials-2.jpg"
+                                            class="testimonial-img flex-shrink-0" alt="">
+                                        <div>
+                                            <h3>...</h3>
+                                            <h4>..</h4>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        <i class="bi bi-quote quote-icon-left"></i>
+                                        ...
+                                        <i class="bi bi-quote quote-icon-right"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div><!-- End testimonial item -->
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-wrap">
+                                <div class="testimonial-item">
+                                    <div class="d-flex align-items-center">
+                                        <img src="assets/img/testimonials/testimonials-3.jpg"
+                                            class="testimonial-img flex-shrink-0" alt="">
+                                        <div>
+                                            <h3>..</h3>
+                                            <h4>..</h4>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        <i class="bi bi-quote quote-icon-left"></i>
+                                        ..
+                                        <i class="bi bi-quote quote-icon-right"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div><!-- End testimonial item -->
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-wrap">
+                                <div class="testimonial-item">
+                                    <div class="d-flex align-items-center">
+                                        <img src="assets/img/testimonials/testimonials-4.jpg"
+                                            class="testimonial-img flex-shrink-0" alt="">
+                                        <div>
+                                            <h3>..</h3>
+                                            <h4>..</h4>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        <i class="bi bi-quote quote-icon-left"></i>
+                                        ..
+                                        <i class="bi bi-quote quote-icon-right"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div><!-- End testimonial item -->
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-wrap">
+                                <div class="testimonial-item">
+                                    <div class="d-flex align-items-center">
+                                        <img src="assets/img/testimonials/testimonials-5.jpg"
+                                            class="testimonial-img flex-shrink-0" alt="">
+                                        <div>
+                                            <h3>..</h3>
+                                            <h4>..</h4>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        <i class="bi bi-quote quote-icon-left"></i>
+                                        ..
+                                        <i class="bi bi-quote quote-icon-right"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div><!-- End testimonial item -->
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </div>
+        </section><!-- End Testimonials Section -->
+
+        <!-- ======= Team Manajer Section ======= -->
+        <section id="team" class="team">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-header">
+                    <h2>Manajemen BPMSPH</h2>
+                </div>
+
+                <div class="row gy-5">
+
+                    <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+                        <div class="member">
+                            <img src="assets/img/team/Imron.png" class="img-fluid" alt="">
+                            <h4>drh. Imron Suandy, MP</h4>
+                            <span><strong>PLT KEPALA BALAI</strong></span>
+                            <a class="cta-btn" href="https://bpmsph.com/LHKPN%20Iwan%20Dz.pdf"><strong>LHKPN
+                                    2022</strong></a>
+                        </div>
+                    </div><!-- End Team Member -->
+
+                    <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+                        <div class="member">
+                            <img src="assets/img/team/Anik.png" class="img-fluid" alt="">
+                            <h4>drh. Rr Anik Winanningrum</h4>
+                            <span><strong>KEPALA SUBBAGIAN TATA USAHA </strong> 19751221 200801 2 012</span>
+                            <a class="cta-btn" href="https://bpmsph.com/LHKPN%20Anik%20W.pdf"><strong>LHKPN
+                                    2022</strong></a>
+                        </div>
+                    </div><!-- End Team Member -->
+
+                    <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+                        <div class="member">
+                            <img src="assets/img/team/Dian.png" class="img-fluid" alt="">
+                            <h4>drh. Dian Cahyaningsari, M.Si</h4>
+                            <span><strong>SUBKOORDINATOR PELAYANAN TEKNIS </strong> 19810921 200501 2 001
+                            </span>
+                            <a class="cta-btn" href="https://bpmsph.com/LHKPN%20Mas%20Ading.pdf"><strong>LHKPN
+                                    2022</strong></a>
+                        </div>
+                    </div><!-- End Team Member -->
+
+                    <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+                        <div class="member">
+                            <img src="assets/img/team/Wiwit.png" class="img-fluid" alt="">
+                            <h4>drh. Wiwit Subiyanti</h4>
+                            <span><strong>SUBKOORDINATOR PENYIAPAN SAMPEL </strong> 19810221 200801 2
+                                010</span>
+                            <a class="cta-btn"
+                                href="https://bpmsph.com/LHKPN%20Angryani%20Chahyaningtyas.pdf"><strong>LHKPN
+                                    2022</strong></a>
+                        </div>
+                    </div><!-- End Team Member -->
+
+                </div>
+
+            </div>
+        </section><!-- End Team Manajer Section -->
+
+        <!-- ======= Frequently Asked Questions Section ======= -->
+        <section id="faq" class="faq">
+            <div class="container" data-aos="fade-up">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-4">
+                        <div class="content px-xl-5">
+                            <h3>Frequently Asked <strong>Questions</strong></h3>
+                            <br>
+                            <p><strong>Apa itu BPMSPH ?</strong></p>
+                            <p class="justify">Balai Pengujian Mutu dan Sertifikasi Produk Hewan atau
+                                disingkat BPMSPH merupakan Unit Pelaksana Teknis (UPT) Direktorat Jenderal
+                                Peternakan dan Kesehatan Hewan, Kementerian Pertanian yang berada di bawah
+                                dan bertanggung jawab kepada Direktur Jenderal Peternakan dan Kesehatan
+                                Hewan, dan secara teknis dibina oleh Direktur Kesehatan Masyarakat Veteriner
+                                dan Pascapanen.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8">
+
+                        <div class="accordion accordion-flush" id="faqlist" data-aos="fade-up" data-aos-delay="100">
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq-content-1">
+                                        <span class="num">1.</span>
+                                        Sampel apa saja yang dapat diuji di BPMSPH?
+                                    </button>
+                                </h3>
+                                <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                                    <div class="accordion-body">
+                                        Balai Pengujian Mutu dan Sertifikasi Produk Hewan melakukan
+                                        pengujian terhadap berbagai produk hewan meliputi Daging, Susu,
+                                        Telur, dan produk hewan turunan lainnya.
+                                    </div>
+                                </div>
+                            </div><!-- # Faq item-->
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq-content-2">
+                                        <span class="num">2.</span>
+                                        Berapa tarif untuk setiap sampel yang diuji di BPMSPH?
+                                    </button>
+                                </h3>
+                                <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                                    <div class="accordion-body">
+                                        Besaran Tarif Pengujian yang ditetapkan berbeda-beda tergantung
+                                        parameter pengujian yang dilakukan. Detail tarif pengujian dapat
+                                        dilihat disini.
+                                    </div>
+                                </div>
+                            </div><!-- # Faq item-->
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq-content-3">
+                                        <span class="num">3.</span>
+                                        Layanan pengujian apa saja yang dilakukan di BPMSPH?
+                                    </button>
+                                </h3>
+                                <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                                    <div class="accordion-body">
+                                        Secara singkat, layanan uji yang dilakukan oleh Balai Pengujian Mutu
+                                        dan Sertifikasi Produk Hewan meliputi pengujian terhadap Pengujian
+                                        Cemaran Mikroba, Pengujian Laboratorium Bioassay, Pengujian
+                                        Laboratorium Kimia. Selengkapnya bisa dicek disini.
+                                    </div>
+                                </div>
+                            </div><!-- # Faq item-->
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq-content-4">
+                                        <span class="num">4.</span>
+                                        Bagaimana mekanisme pengambilan hasil pengujian oleh pengguna jasa?
+                                    </button>
+                                </h3>
+                                <div id="faq-content-4" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                                    <div class="accordion-body">
+                                        Hasil pengujian dapat diperoleh setelah pengguna jasa melakukan
+                                        pembayaran dan memberikan bukti pembayaran. Pengambilan hasil
+                                        pengujian dapat dilakukan dengan berbagai cara, antara lain :
+                                        diambil langsung oleh pengguna jasa, melalui surat elektronik
+                                        (e-mail), atau pengiriman melalui Pos.
+                                    </div>
+                                </div>
+                            </div><!-- # Faq item-->
+                            <a href="https://bpmsph.com/niagaweb/faq/" class="btn btn-primary">Selengkapnya</a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Frequently Asked Questions Section -->
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-header">
+                    <h2>Contact</h2>
+                </div>
+
+                <div class="row gx-lg-0 gy-4">
+
+                    <div class="col-lg-4">
+
+                        <div class="info-container">
+                            <div class="info-item d-flex justify-content-center align-items-center">
+                                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                                <div class="">
+                                    <h4>Location:</h4>
+                                    <p class="text-light">Jl. Pemuda No.29A, Kecamatan Tanah Sareal, Kota
+                                        Bogor, Jawa Barat
+                                        16161</p>
+                                </div>
+                            </div><!-- End Info Item -->
+
+                            <div class="info-item">
+                                <i class="bi bi-envelope flex-shrink-0"></i>
+                                <div class="">
+                                    <h4>Email:</h4>
+                                    <p class="text-light">bpmsph@pertanian.go.id</p>
+                                </div>
+                            </div><!-- End Info Item -->
+
+                            <div class="info-item">
+                                <i class="bi bi-phone flex-shrink-0"></i>
+                                <div>
+                                    <h4>Call:</h4>
+                                    <p class="text-light">+62 251 8353712</p>
+                                </div>
+                            </div><!-- End Info Item -->
+
+                            <div class="info-item">
+                                <i class="bi bi-clock flex-shrink-0"></i>
+                                <div class="d-flex flex-column align-items-center justify-content-center">
+                                    <h4>Open Hours:</h4>
+                                    <p class="text-light">Mon-Thur: 7:30AM - 4PM</p>
+                                    <p class="text-light">Friday : 7:30AM - 4:30PM</p>
+                                </div>
+                            </div><!-- End Info Item -->
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-8 p-4">
+                        <form action="/pesan" method="post" name="infodeskForm">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <input type="text" name="name" class="form-control" id="name"
+                                        placeholder="Masukkan nama" onkeyup="handleButtonDisabled()" required>
+                                </div>
+                                <div class="col-md-6 form-group mt-3 mt-md-0">
+                                    <input type="email" class="form-control" name="email" id="email"
+                                        placeholder="Masukkan E-mail" onkeyup="handleButtonDisabled()" required>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <textarea class="form-control" name="pesan" id="pesan" rows="7" placeholder="Masukkan pesan"
+                                    onkeyup="handleButtonDisabled()" required></textarea>
+                            </div>
+                            <button type="submit" id="buttonSubmit" class="btn btn-primary mt-3" style="width: 100%"
+                                value="kirim" disabled="disabled">Kirim</button>
+                        </form>
+                    </div><!-- End Contact Form -->
+
+                </div>
+
+            </div>
+        </section><!-- End Contact Section -->
     </main><!-- End #main -->
 
     <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i

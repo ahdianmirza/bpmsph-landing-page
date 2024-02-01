@@ -12,9 +12,11 @@
         </a>
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a href="#hero">Dashboard</a></li>
+                <li><a href="#menu">Dashboard</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#clients">Mitra</a></li>
+                <li><a href="#mitra">Mitra</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="#testimonials">Testimoni</a></li>
                 <li><a href="#team">Manajemen BPMSPH</a></li>
                 <li><a href="#faq">FaQ</a></li>
                 <li><a href="#contact">Contact</a></li>

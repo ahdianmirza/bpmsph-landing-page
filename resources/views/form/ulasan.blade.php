@@ -33,15 +33,16 @@
                             <h5 class="card-title">Ulasan</h5>
 
                             <!-- Horizontal Form -->
-                            <form action="/ulasan" method="post">
+                            <form action="/ulasan" method="post" name="formUlasan">
                                 @csrf
                                 <div class="row mb-3">
                                     <div class="col-6">
                                         <div class="">
                                             <div class="btn-group d-flex justify-content-between" role="group">
                                                 <div class="d-flex flex-column justify-content-center align-items-center">
-                                                    <input type="radio" class="btn-check" name="ulasan" id="tidak-puas"
-                                                        autocomplete="off" value="Tidak Puas">
+                                                    <input type="radio" onclick="checkFormUlasan()" class="btn-check"
+                                                        name="ulasan" id="tidak-puas" autocomplete="off"
+                                                        value="Tidak Puas">
                                                     <label class="btn btn-outline-primary" for="tidak-puas">
                                                         <img src="assets/img/tidak-puas.png" alt="Tidak Puas"
                                                             width="70">
@@ -50,8 +51,9 @@
                                                 </div>
 
                                                 <div class="d-flex flex-column justify-content-center align-items-center">
-                                                    <input type="radio" class="btn-check" name="ulasan" id="kurang-puas"
-                                                        autocomplete="off" value="Kurang Puas">
+                                                    <input type="radio" onclick="checkFormUlasan()" class="btn-check"
+                                                        name="ulasan" id="kurang-puas" autocomplete="off"
+                                                        value="Kurang Puas">
                                                     <label class="btn btn-outline-primary" for="kurang-puas">
                                                         <img src="assets/img/kurang-puas.png" alt="Kurang Puas"
                                                             width="70">
@@ -60,8 +62,8 @@
                                                 </div>
 
                                                 <div class="d-flex flex-column justify-content-center align-items-center">
-                                                    <input type="radio" class="btn-check" name="ulasan" id="puas"
-                                                        autocomplete="off" value="Puas">
+                                                    <input type="radio" onclick="checkFormUlasan()" class="btn-check"
+                                                        name="ulasan" id="puas" autocomplete="off" value="Puas">
                                                     <label class="btn btn-outline-primary" for="puas">
                                                         <img src="assets/img/puas.png" alt="Puas" width="70">
                                                     </label>
@@ -69,8 +71,9 @@
                                                 </div>
 
                                                 <div class="d-flex flex-column justify-content-center align-items-center">
-                                                    <input type="radio" class="btn-check" name="ulasan" id="sangat-puas"
-                                                        autocomplete="off" value="Sangat Puas">
+                                                    <input type="radio" onclick="checkFormUlasan()" class="btn-check"
+                                                        name="ulasan" id="sangat-puas" autocomplete="off"
+                                                        value="Sangat Puas">
                                                     <label class="btn btn-outline-primary" for="sangat-puas">
                                                         <img src="assets/img/sangat-puas.png" alt="Sangat Puas"
                                                             width="70">
@@ -84,10 +87,10 @@
                                     <div class="d-flex flex-column">
                                         <label for="komentar" class="col-form-label">Komentar</label>
                                         <div class="col">
-                                            <input type="text"
+                                            <input type="text" onkeyup="checkFormUlasan()"
                                                 class="form-control @error('komentar') is-invalid @enderror" id="komentar"
-                                                name="komentar" autocomplete="off" value="{{ old('komentar') }}" autofocus
-                                                required>
+                                                name="komentar" checked autocomplete="off" value="{{ old('komentar') }}"
+                                                autofocus required>
                                             @error('komentar')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -97,7 +100,8 @@
                                     </div>
                                 </div>
                                 <div class="d-grid">
-                                    <button type="submit" class="btn btn-primary col">Submit</button>
+                                    <button id="submitUlasan" disabled="disabled" type="submit" value="submit"
+                                        class="btn btn-primary col">Kirim</button>
                                 </div>
                             </form><!-- End Horizontal Form -->
                         </div>
@@ -106,4 +110,34 @@
             </div>
         </section>
     </main><!-- End #main -->
+
+    <script>
+        function checkFormUlasan() {
+            let formUlasan = document.forms['formUlasan'].elements;
+            const submitUlasanButton = document.getElementById("submitUlasan");
+            const ulasan = document.querySelector('input[type="radio"]:checked');
+            let fieldMustBeFilledUlasan = true;
+
+            for (let i = 0; i < formUlasan.length; i++) {
+                if (formUlasan[i].value.length == 0) {
+                    fieldMustBeFilledUlasan = false;
+                }
+            }
+
+            if (!ulasan) {
+                fieldMustBeFilledUlasan = false;
+            }
+
+            if (fieldMustBeFilledUlasan) {
+                document.getElementById("submitUlasan").disabled = false;
+            } else {
+                document.getElementById("submitUlasan").disabled = true;
+            }
+        }
+
+        const submitUlasan = document.getElementById('submitUlasan');
+        submitUlasan.onclick = () => {
+            window.open("https://forms.gle/KpEFMHvv6UdQBcKu9", '_blank')
+        }
+    </script>
 @endsection

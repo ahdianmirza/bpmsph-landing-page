@@ -97,7 +97,7 @@
                                 <div class="row mb-3">
                                     <div class="d-flex flex-column">
                                         <label for="tanggal" class="col col-form-label">Tanggal</label>
-                                        <div class="col">
+                                        <div class="col-2">
                                             <input type="date"
                                                 class="form-control @error('tanggal') is-invalid @enderror" id="tanggal"
                                                 name="tanggal" value="{{ old('tanggal') }}" onfocus="checkForm()" required>
@@ -112,7 +112,7 @@
                                 <div class="row mb-3">
                                     <div class="d-flex flex-column">
                                         <label for="waktu" class="col col-form-label">Waktu</label>
-                                        <div class="col">
+                                        <div class="col-2">
                                             <input type="time" class="form-control @error('waktu') is-invalid @enderror"
                                                 id="waktu" name="waktu" value="{{ old('waktu') }}"
                                                 onfocus="checkForm()" required>
@@ -170,7 +170,7 @@
                                 <div class="row mb-3">
                                     <div class="d-flex flex-column">
                                         <label for="nomorAntrian" class="col col-form-label">Nomor Antrian</label>
-                                        <div class="col">
+                                        <div class="col-2">
                                             <div class="d-flex column-gap-2">
                                                 <input type="text"
                                                     class="form-control @error('nomorAntrianKonsul') is-invalid @enderror"

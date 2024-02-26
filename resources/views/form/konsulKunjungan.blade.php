@@ -130,6 +130,7 @@
                                         <select class="form-select" name="staff" id="staff"
                                             aria-label="Default select example" onfocus="checkForm()">
                                             <option selected disabled>Pilih staff</option>
+                                            <option value="-">Tidak ada</option>
                                             @foreach ($pegawais as $pegawai)
                                                 <option value="{{ $pegawai->name }}">{{ $pegawai->name }}</option>
                                             @endforeach

@@ -8,8 +8,9 @@
                 </a>
                 <div class="icon-text">
                     <img src="assets/img/lokasi.png" alt="Icon">
-                    <a href="https://goo.gl/maps/GWn43dezdZ87z3zf9">Balai Pengujian Mutu dan Sertifikasi Produk
-                        Hewan></a>
+                    <a href="https://goo.gl/maps/GWn43dezdZ87z3zf9" style="color: #8CABFF;">Balai Pengujian Mutu dan
+                        Sertifikasi Produk
+                        Hewan</a>
                 </div>
                 <div class="social-links d-flex mt-4">
                     <a href="https://twitter.com/BPMSPH" class="twitter"><i class="bi bi-twitter"></i></a>

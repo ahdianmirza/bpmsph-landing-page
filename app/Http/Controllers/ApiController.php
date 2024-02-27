@@ -10,6 +10,7 @@ use App\Models\Posisi;
 use App\Models\SensorSuhu;
 use App\Models\SubmitAlert;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ApiController extends Controller
 {
@@ -79,5 +80,10 @@ class ApiController extends Controller
     public function getAntrianProses() {
         $antrianProses = Antrian::firstWhere('status', 'proses');
         return response()->json($antrianProses);
+    }
+
+    public function getTotalKonsulVisitors() {
+        $data = DB::table('total_konsul_visitors')->get();
+        return response()->json($data);
     }
 }

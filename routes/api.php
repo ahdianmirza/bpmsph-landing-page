@@ -30,3 +30,4 @@ Route::post('/post-posisi', [ApiController::class, 'postPosisi']);
 Route::get('/get-antrian', [ApiController::class, 'getAntrian']);
 Route::get('/get-antrian-proses', [ApiController::class, 'getAntrianProses']);
 Route::get('/get-data-pegawai', [ApiController::class, 'getDataPegawai']);
+Route::get('/total-konsul-visitors', [ApiController::class, 'getTotalKonsulVisitors']);

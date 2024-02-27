@@ -48,6 +48,16 @@ Route::get('/dashboard/tables-konsultasi-kunjungan', [DashboardController::class
 Route::get('/dashboard/tables-sample-uji', [DashboardController::class, 'tablesUjiSample'])->middleware('auth');
 Route::get('/dashboard/tables-ulasan', [DashboardController::class, 'tablesUlasan'])->middleware('auth');
 
+// Export Excel
+Route::get('/dashboard/konsultasi-kunjungan/table', [DashboardController::class, 'indexExportExcelKonsulKunjungan'])->middleware('auth');
+Route::get('/dashboard/konsultasi-kunjungan/export', [DashboardController::class, 'exportExcelKonsulKunjungan'])->middleware('auth');
+Route::get('/dashboard/sample-uji/table', [DashboardController::class, 'indexExportExcelSample'])->middleware('auth');
+Route::get('/dashboard/sample-uji/export', [DashboardController::class, 'exportExcelSample'])->middleware('auth');
+Route::get('/dashboard/ulasan/table', [DashboardController::class, 'indexExportExcelUlasan'])->middleware('auth');
+Route::get('/dashboard/ulasan/export', [DashboardController::class, 'exportExcelUlasan'])->middleware('auth');
+Route::get('/dashboard/suhu/table', [DashboardController::class, 'indexExportExcelSuhu'])->middleware('auth');
+Route::get('/dashboard/suhu/export', [DashboardController::class, 'exportExcelSuhu'])->middleware('auth');
+
 Route::get('/dashboard/notifikasi', [DashboardController::class, 'notifikasiIndex'])->middleware('auth');
 
 Route::get('/dashboard/profile', [DashboardController::class, 'profile'])->middleware('auth');

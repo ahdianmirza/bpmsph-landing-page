@@ -20,8 +20,14 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Datatables</h5>
-                            <p>Data Konsultasi / Kunjungan</p>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex flex-column">
+                                    <h5 class="card-title">Datatables</h5>
+                                    <p>Data Konsultasi / Kunjungan</p>
+                                </div>
+                                <a href="{{ url('/dashboard/konsultasi-kunjungan/export') }}"
+                                    class="btn btn-primary">Unduh<i class="bi bi-download ms-2"></i></a>
+                            </div>
 
                             <!-- Table with stripped rows -->
                             <table class="table datatable">

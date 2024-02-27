@@ -20,8 +20,14 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Datatables</h5>
-                            <p>Data Pengantaran Sample</p>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex flex-column">
+                                    <h5 class="card-title">Datatables</h5>
+                                    <p>Data Pengantaran Sample</p>
+                                </div>
+                                <a href="{{ url('/dashboard/sample-uji/export') }}" class="btn btn-primary">Unduh<i
+                                        class="bi bi-download ms-2"></i></a>
+                            </div>
 
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
@@ -50,7 +56,7 @@
                                             <td>{{ date('d-m-Y', strtotime($sample->tanggal)) }}</td>
                                             <td>{{ $sample->waktu }}</td>
                                             <td>{{ $sample->jenis }}</td>
-                                            <td>{{ $sample->suhu }}</td>
+                                            <td>{{ $sample->suhu }}°C</td>
                                             <td>{{ $sample->nomorAntrian }}</td>
                                         </tr>
                                     @endforeach

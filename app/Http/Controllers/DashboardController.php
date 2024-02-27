@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ExportKonsultasi;
+use App\Exports\ExportSample;
+use App\Exports\ExportSuhu;
+use App\Exports\ExportUlasan;
 use App\Http\Controllers\Controller;
 use App\Models\DataPegawai;
 use App\Models\KonsulKunjungan;
@@ -11,6 +15,7 @@ use App\Models\SuhuPengunjung;
 use App\Models\Ulasan;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Maatwebsite\Excel\Facades\Excel;
 
 class DashboardController extends Controller
 {
@@ -89,6 +94,46 @@ class DashboardController extends Controller
             'dataNotifikasiUnchecked' => Notifikasi::where('checked', 0)->get(),
             'dataNotifikasi' => Notifikasi::latest()->get()
         ]);
+    }
+
+    public function indexExportExcelKonsulKunjungan() {
+        return view('dashboard.exportTable.konsultasiKunjungan', [
+            'dataKonsul' => KonsulKunjungan::orderBy('created_at', 'asc')->get()
+        ]);
+    }
+
+    public function exportExcelKonsulKunjungan() {
+        return Excel::download(new ExportKonsultasi, 'Form Konsultasi.xlsx');
+    }
+
+    public function indexExportExcelSample() {
+        return view('dashboard.exportTable.sample', [
+            'dataSample' => Sampleuji::orderBy('created_at', 'asc')->get()
+        ]);
+    }
+
+    public function exportExcelSample() {
+        return Excel::download(new ExportSample, 'Form Sample Uji.xlsx');
+    }
+
+    public function indexExportExcelUlasan() {
+        return view('dashboard.exportTable.ulasan', [
+            'dataUlasan' => Ulasan::orderBy('created_at', 'asc')->get()
+        ]);
+    }
+
+    public function exportExcelUlasan() {
+        return Excel::download(new ExportUlasan, 'Form Ulasan.xlsx');
+    }
+
+    public function indexExportExcelSuhu() {
+        return view('dashboard.exportTable.dataSuhu', [
+            'dataSuhu' => SuhuPengunjung::orderBy('created_at', 'asc')->get()
+        ]);
+    }
+
+    public function exportExcelSuhu() {
+        return Excel::download(new ExportSuhu, 'Table Suhu Pengunjung.xlsx');
     }
 
     public function tablesUlasan() {

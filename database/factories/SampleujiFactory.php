@@ -17,7 +17,15 @@ class SampleujiFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name'=> fake()->name(),
+            'whatsapp' => fake()->phoneNumber(),
+            'asal' => fake()->randomElement(['Mandiri', 'Institusi']),
+            'alamat' => fake()->address(),
+            'tanggal' => fake()->dateTimeBetween('-1 week', '+1 week'),
+            'waktu' => fake()->time('H:i'),
+            'jenis' => fake()->randomElement(['Kuman', 'Telur', 'Daging', 'Susu']),
+            'suhu' => fake()->randomFloat(2, 20, 40),
+            'nomorAntrian' => fake()->randomElement(['S001', 'S002', 'S003'])
         ];
     }
 }

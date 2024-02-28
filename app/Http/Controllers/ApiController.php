@@ -82,8 +82,8 @@ class ApiController extends Controller
         return response()->json($antrianProses);
     }
 
-    public function getTotalKonsulVisitors() {
-        $data = DB::table('total_konsul_visitors')->get();
+    public function getTotalVisitorsPerWeek() {
+        $data = DB::table('total_visitors_per_week')->orderBy(DB::raw('visitors_date'))->get();
         return response()->json($data);
     }
 }

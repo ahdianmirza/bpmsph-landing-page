@@ -1,13 +1,15 @@
 const konsulChart = () => {
+    const windowHostname = window.location.hostname;
+
     document.addEventListener("DOMContentLoaded", () => {
-        fetch("http://bpmsph.test/api/total-konsul-visitors")
+        fetch(`http://${windowHostname}/api/total-visitors-per-week`)
             .then((response) => response.json())
             .then((data) => {
                 let chartData = {
                     totalVisitors: data.map(
                         (visitor) => visitor.total_visitors
                     ),
-                    date: data.map((date) => date.konsul_date),
+                    date: data.map((date) => date.visitors_date),
                 };
 
                 const chartOptions = {
@@ -20,9 +22,6 @@ const konsulChart = () => {
                     chart: {
                         height: 350,
                         type: "area",
-                        toolbar: {
-                            show: false,
-                        },
                     },
                     markers: {
                         size: 4,

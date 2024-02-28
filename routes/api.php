@@ -31,3 +31,4 @@ Route::get('/get-antrian', [ApiController::class, 'getAntrian']);
 Route::get('/get-antrian-proses', [ApiController::class, 'getAntrianProses']);
 Route::get('/get-data-pegawai', [ApiController::class, 'getDataPegawai']);
 Route::get('/total-visitors-per-week', [ApiController::class, 'getTotalVisitorsPerWeek']);
+Route::get('/total-konsul-sample', [ApiController::class, 'getTotalKonsulSample']);

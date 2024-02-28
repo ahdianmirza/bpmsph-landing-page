@@ -24,7 +24,7 @@
                             <div class="card info-card sales-card">
 
                                 <div class="card-body">
-                                    <h5 class="card-title">Konsultasi Kunjungan</h5>
+                                    <h5 class="card-title">Total Konsultasi Kunjungan</h5>
 
                                     <div class="d-flex align-items-center">
                                         <div
@@ -32,10 +32,7 @@
                                             <i class="bi bi-people"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>1244</h6>
-                                            <span class="text-danger small pt-1 fw-bold">12%</span> <span
-                                                class="text-muted small pt-2 ps-1">decrease</span>
-
+                                            <h6 id="total-tamu"></h6>
                                         </div>
                                     </div>
 
@@ -48,7 +45,7 @@
                             <div class="card info-card revenue-card">
 
                                 <div class="card-body">
-                                    <h5 class="card-title">Sample Uji</h5>
+                                    <h5 class="card-title">Total Sample Uji</h5>
 
                                     <div class="d-flex align-items-center">
                                         <div
@@ -56,10 +53,8 @@
                                             <i class="bi bi-people"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>1244</h6>
-                                            <span class="text-danger small pt-1 fw-bold">12%</span> <span
-                                                class="text-muted small pt-2 ps-1">decrease</span>
-
+                                            <h6 id="total-sample">1244</h6>
+                                            <script src="{{ asset('assets/js/totalKonsulSample.js') }}"></script>
                                         </div>
                                     </div>
 

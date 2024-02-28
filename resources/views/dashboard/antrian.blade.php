@@ -239,10 +239,6 @@
                                                                             value="{{ $antrian->id }}"
                                                                             onclick="panggil(value)"
                                                                             class="btn btn-info btn-sm">Panggil</button>
-                                                                        <button id="ingatkanButton" type="submit"
-                                                                            value="{{ $antrian->staff }}"
-                                                                            onclick="ingatkan(value)"
-                                                                            class="btn btn-info btn-sm">Ingatkan</button>
                                                                     </div>
                                                                 </td>
                                                             @endif
@@ -268,9 +264,14 @@
                                                                 </td>
                                                                 <td>
                                                                     <div class="d-flex column-gap-1">
-                                                                        <button type="button"
-                                                                            class="btn btn-primary btn-sm"
-                                                                            disabled>Mulai</button>
+                                                                        <form
+                                                                            action="/dashboard/antrian/{{ $antrian->id }}/proses"
+                                                                            method="post">
+                                                                            @method('put')
+                                                                            @csrf
+                                                                            <button
+                                                                                class="btn btn-primary btn-sm">Mulai</button>
+                                                                        </form>
                                                                         <button type="button"
                                                                             class="btn btn-secondary btn-sm"
                                                                             disabled>Pending</button>

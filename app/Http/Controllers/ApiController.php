@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Antrian;
 use App\Models\DataPegawai;
+use App\Models\KonsulKunjungan;
 use App\Models\NomorAntrian;
 use App\Models\Posisi;
+use App\Models\Sampleuji;
 use App\Models\SensorSuhu;
 use App\Models\SubmitAlert;
 use Illuminate\Http\Request;
@@ -85,5 +87,14 @@ class ApiController extends Controller
     public function getTotalVisitorsPerWeek() {
         $data = DB::table('total_visitors_per_week')->orderBy(DB::raw('visitors_date'))->get();
         return response()->json($data);
+    }
+
+    public function getTotalKonsulSample() {
+        $totalTamu = KonsulKunjungan::select(DB::raw('count(id) as total_tamu'))->get();
+        $totalSample = Sampleuji::select(DB::raw('count(id) as total_sample'))->get();
+        return response()->json([
+            'total_tamu' => $totalTamu,
+            'total_sample' => $totalSample
+        ]);
     }
 }

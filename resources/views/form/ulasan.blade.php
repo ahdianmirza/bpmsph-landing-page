@@ -39,7 +39,7 @@
                                     <div class="col-6">
                                         <div class="mb-3">
                                             <div>
-                                                <label for="kelamin" class="col-form-label">Kelamin</label>
+                                                <label for="kelamin" class="col-form-label">Jenis Kelamin</label>
                                                 <ul class="list-group list-group-horizontal">
                                                     <li class="list-group-item">
                                                         <input class="form-check-input me-1" type="radio" name="kelamin"
@@ -320,7 +320,7 @@
                                     </div>
 
                                     <div class="d-flex flex-column">
-                                        <label for="komentar" class="col-form-label">Komentar</label>
+                                        <label for="komentar" class="col-form-label">Berikan Komentar/Saran</label>
                                         <div class="col-6">
                                             <textarea class="form-control @error('komentar') is-invalid @enderror" id="komentar" rows="4" name="komentar"
                                                 onkeyup="checkFormUlasan()" required></textarea>

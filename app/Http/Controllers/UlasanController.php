@@ -15,11 +15,18 @@ class UlasanController extends Controller
     }
 
     public function ulasanStore(Request $request) {
+        // dd($request->all());
         $validatedData = $request->validate([
+            'kelamin' => 'required',
+            'umur' => 'required',
             'ulasan' => 'required',
-            'komentar' => 'required|max:255'
+            'kualitas' => 'required',
+            'kecepatan' => 'required',
+            'kemudahan' => 'required',
+            'whatsapp' => 'required',
+            'qna' => 'required',
+            'komentar' => 'required'
         ]);
-
         Ulasan::create($validatedData);
 
         return redirect('/ulasan')->with('success', 'Ulasan berhasil dikirim');

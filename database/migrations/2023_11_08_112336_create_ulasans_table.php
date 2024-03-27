@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('ulasans', function (Blueprint $table) {
             $table->id();
+            $table->string('kelamin');
+            $table->string('umur');
             $table->string('ulasan');
+            $table->string('kualitas');
+            $table->string('kecepatan');
+            $table->string('kemudahan');
+            $table->string('whatsapp');
+            $table->string('qna');
             $table->string('komentar');
             $table->timestamps();
         });
